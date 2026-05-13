@@ -1,65 +1,186 @@
-import Image from "next/image";
+import ServicesSection from "./components/ServicesSection";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+    <main
+      className="relative w-screen h-screen bg-black text-white overflow-hidden"
+      style={{ fontFamily: "var(--font-bricolage)" }}
+    >
+      {/* Logo — always top-left */}
+      <div className="absolute top-6 left-5 md:top-8 md:left-8 z-10">
+        <img
+          src="/logo-wave.svg"
+          alt="AltaMedia"
+          style={{ height: 44, width: "auto", filter: "brightness(0) invert(1)" }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+      </div>
+
+      {/* ════════════════════════════
+          MOBILE  (hidden on md+)
+      ════════════════════════════ */}
+      <div className="flex flex-col h-full px-6 pt-28 pb-10 md:hidden">
+        <h1
+          className="font-extrabold leading-[0.9] tracking-tight"
+          style={{ fontSize: "clamp(58px, 15vw, 88px)", letterSpacing: "-0.02em" }}
+        >
+          Digital
+          <br />
+          Marketing
+        </h1>
+
+        <div className="mt-8 mb-8">
+          <div
+            style={{
+              width: 1,
+              height: 52,
+              background: "rgba(255,255,255,0.45)",
+              marginBottom: 16,
+            }}
+          />
+          <p className="font-bold leading-snug" style={{ fontSize: 18 }}>
+            We create impactful
+            <br />
+            automated marketing.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <p
+          className="leading-relaxed"
+          style={{ fontSize: 13.5, color: "rgba(255,255,255,0.68)", fontWeight: 400 }}
+        >
+          AltaMedia transforms businesses with creative design and automated
+          marketing solutions, driving long-term growth.
+        </p>
+
+        <div className="flex mt-auto gap-10">
+          <div>
+            <p style={{ fontSize: 10, color: "rgba(255,255,255,0.32)", marginBottom: 6 }}>01</p>
+            <p style={{ fontSize: 13 }}>Creative brand design</p>
+          </div>
+          <div>
+            <p style={{ fontSize: 10, color: "rgba(255,255,255,0.32)", marginBottom: 6 }}>02</p>
+            <p style={{ fontSize: 13 }}>Automated marketing</p>
+          </div>
         </div>
-      </main>
-    </div>
+      </div>
+
+      {/* ════════════════════════════
+          DESKTOP  (hidden below md)
+      ════════════════════════════ */}
+      <div className="hidden md:flex h-full">
+
+        {/* PORTFOLIO sidebar */}
+        <div className="flex-shrink-0 w-14 flex items-center justify-center">
+          <span
+            style={{
+              writingMode: "vertical-rl",
+              transform: "rotate(180deg)",
+              fontSize: 9,
+              letterSpacing: "0.3em",
+              color: "rgba(255,255,255,0.42)",
+              fontWeight: 400,
+            }}
+          >
+            PORTFOLIO
+          </span>
+        </div>
+
+        {/* Main content column */}
+        <div className="flex flex-col flex-1" style={{ paddingLeft: "8vw" }}>
+          {/* 28vh spacer — headline always starts below logo */}
+          <div style={{ height: "28vh" }} />
+
+          <h1
+            style={{
+              fontSize: "clamp(72px, 9.2vw, 134px)",
+              fontWeight: 800,
+              lineHeight: 0.92,
+              letterSpacing: "-0.02em",
+            }}
+          >
+            Digital
+            <br />
+            Marketing
+          </h1>
+
+          {/* fills remaining space, pushes bottom group down */}
+          <div className="flex-1" />
+
+          <div style={{ paddingBottom: "8vh" }}>
+            <div
+              style={{
+                width: 1,
+                height: 72,
+                background: "rgba(255,255,255,0.45)",
+                marginBottom: 20,
+              }}
+            />
+            <p
+              style={{
+                fontSize: "clamp(15px, 1.4vw, 21px)",
+                fontWeight: 700,
+                lineHeight: 1.25,
+                marginBottom: "clamp(28px, 3.5vh, 48px)",
+              }}
+            >
+              We create impactful
+              <br />
+              automated marketing.
+            </p>
+            <div style={{ display: "flex", gap: "clamp(32px, 5vw, 100px)" }}>
+              <div>
+                <p style={{ fontSize: 11, color: "rgba(255,255,255,0.32)", marginBottom: 7 }}>01</p>
+                <p style={{ fontSize: 13 }}>Creative brand design</p>
+              </div>
+              <div>
+                <p style={{ fontSize: 11, color: "rgba(255,255,255,0.32)", marginBottom: 7 }}>02</p>
+                <p style={{ fontSize: 13 }}>Automated marketing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Body text column — aligns top with headline via same 28vh offset */}
+        <div
+          className="flex-shrink-0"
+          style={{
+            width: "clamp(200px, 20vw, 280px)",
+            paddingTop: "28vh",
+            paddingRight: "5%",
+          }}
+        >
+          <p
+            style={{
+              fontSize: 13.5,
+              lineHeight: 1.65,
+              color: "rgba(255,255,255,0.7)",
+              fontWeight: 400,
+            }}
+          >
+            AltaMedia transforms businesses with creative design and automated
+            marketing solutions, driving long-term growth.
+          </p>
+        </div>
+
+        {/* SCROLL DOWN sidebar */}
+        <div className="flex-shrink-0 w-14 flex items-center justify-center">
+          <span
+            style={{
+              writingMode: "vertical-lr",
+              fontSize: 9,
+              letterSpacing: "0.3em",
+              color: "rgba(255,255,255,0.42)",
+              fontWeight: 400,
+            }}
+          >
+            SCROLL DOWN
+          </span>
+        </div>
+
+      </div>
+    </main>
+    <ServicesSection />
+    </>
   );
 }
