@@ -24,14 +24,24 @@ export default function Footer(): React.JSX.Element {
           style={{ height: 32, width: "auto", filter: "brightness(0) invert(1)" }}
         />
 
-        {/* Copyright */}
-        <p style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", fontWeight: 400 }}>
-          © {new Date().getFullYear()} AltaMedia. All rights reserved.
-        </p>
+        {/* Center: copyright + contact */}
+        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+          <p style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", fontWeight: 400, margin: 0 }}>
+            © {new Date().getFullYear()} AltaMedia. All rights reserved.
+          </p>
+          <span style={{ fontSize: 11, color: "rgba(255,255,255,0.15)" }}>·</span>
+          <p style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", fontWeight: 400, margin: 0 }}>
+            sales@altamedia.ai
+          </p>
+          <span style={{ fontSize: 11, color: "rgba(255,255,255,0.15)" }}>·</span>
+          <p style={{ fontSize: 11, color: "rgba(255,255,255,0.35)", fontWeight: 400, margin: 0 }}>
+            +63 917 306 2211
+          </p>
+        </div>
 
         {/* Facebook */}
         <a
-          href="#"
+          href="https://www.facebook.com/altamediaads"
           aria-label="AltaMedia on Facebook"
           className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4"
           style={{ color: "rgba(255,255,255,0.55)", lineHeight: 1, textDecoration: "none" }}

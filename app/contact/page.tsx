@@ -19,20 +19,20 @@ function FacebookIcon() {
 const contacts = [
   {
     label: "Email",
-    value: "hello@altamedia.com",
+    value: "sales@altamedia.ai",
     href: null,
     icon: null,
   },
   {
     label: "Phone",
-    value: "+1 (555) 000-0000",
+    value: "+63 917 306 2211",
     href: null,
     icon: null,
   },
   {
     label: "Facebook",
     value: "AltaMedia",
-    href: "https://facebook.com/altamedia",
+    href: "https://www.facebook.com/altamediaads",
     icon: <FacebookIcon />,
   },
 ];
