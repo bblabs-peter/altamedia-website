@@ -1,4 +1,7 @@
 import ServicesSection from "./components/ServicesSection";
+import GalleryPreview from "./components/GalleryPreview";
+import CTASection from "./components/CTASection";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -7,6 +10,49 @@ export default function Home() {
       className="relative w-screen h-screen bg-black text-white overflow-hidden"
       style={{ fontFamily: "var(--font-bricolage)" }}
     >
+      {/* Video background */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="/pics/bsa/1778580247139-plk6v6g9h4.png"
+        style={{
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 0,
+        }}
+      >
+        <source src="/vids/hero.webm" type="video/webm" />
+      </video>
+
+      {/* Dark overlay */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          background: "rgba(0,0,0,0.5)",
+          zIndex: 1,
+        }}
+      />
+
+      {/* Bottom fade to black */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "20%",
+          background: "linear-gradient(to bottom, transparent, #000)",
+          zIndex: 2,
+        }}
+      />
+
       {/* Logo — always top-left */}
       <div className="absolute top-6 left-5 md:top-8 md:left-8 z-10">
         <img
@@ -19,48 +65,50 @@ export default function Home() {
       {/* ════════════════════════════
           MOBILE  (hidden on md+)
       ════════════════════════════ */}
-      <div className="flex flex-col h-full px-6 pt-28 pb-10 md:hidden">
+      {/* paddingTop: 100px clears the absolute logo (top:24px + height:44px = 68px) with room to breathe */}
+      <div
+        className="relative flex flex-col h-full md:hidden"
+        style={{ paddingTop: 100, paddingBottom: 40, paddingLeft: 28, paddingRight: 28, zIndex: 10 }}
+      >
         <h1
-          className="font-extrabold leading-[0.9] tracking-tight"
-          style={{ fontSize: "clamp(58px, 15vw, 88px)", letterSpacing: "-0.02em" }}
+          className="font-extrabold leading-[0.92] tracking-tight"
+          style={{ letterSpacing: "-0.02em", textShadow: "0 2px 16px rgba(0,0,0,0.8)" }}
         >
-          Digital
-          <br />
-          Marketing
+          <span style={{ display: "block", fontSize: "clamp(48px, 12vw, 72px)" }}>AltaMedia</span>
+          <span style={{ display: "block", fontSize: "clamp(28px, 7vw, 44px)", fontWeight: 500, color: "rgba(255,255,255,0.75)", marginTop: "0.15em" }}>Digital Marketing</span>
         </h1>
 
-        <div className="mt-8 mb-8">
-          <div
-            style={{
-              width: 1,
-              height: 52,
-              background: "rgba(255,255,255,0.45)",
-              marginBottom: 16,
-            }}
-          />
-          <p className="font-bold leading-snug" style={{ fontSize: 18 }}>
+        {/* larger top spacer pushes middle content further down */}
+        <div className="flex-[2]" />
+
+        <div className="flex flex-col items-center text-center">
+          <p className="font-bold leading-snug" style={{ fontSize: 17, textShadow: "0 1px 8px rgba(0,0,0,0.7)" }}>
             We create impactful
             <br />
             automated marketing.
           </p>
+          <p
+            className="leading-relaxed mt-4"
+            style={{ fontSize: 13, color: "rgba(255,255,255,0.68)", fontWeight: 400 }}
+          >
+            AltaMedia transforms businesses with creative design and automated
+            marketing solutions, driving long-term growth.
+          </p>
         </div>
 
-        <p
-          className="leading-relaxed"
-          style={{ fontSize: 13.5, color: "rgba(255,255,255,0.68)", fontWeight: 400 }}
-        >
-          AltaMedia transforms businesses with creative design and automated
-          marketing solutions, driving long-term growth.
-        </p>
+        <div className="flex-1" />
 
-        <div className="flex mt-auto gap-10">
-          <div>
-            <p style={{ fontSize: 10, color: "rgba(255,255,255,0.32)", marginBottom: 6 }}>01</p>
-            <p style={{ fontSize: 13 }}>Creative brand design</p>
-          </div>
-          <div>
-            <p style={{ fontSize: 10, color: "rgba(255,255,255,0.32)", marginBottom: 6 }}>02</p>
-            <p style={{ fontSize: 13 }}>Automated marketing</p>
+        <div className="flex gap-4">
+          <div style={{ width: 1, background: "rgba(255,255,255,0.45)", flexShrink: 0 }} />
+          <div className="flex flex-col gap-5">
+            <div>
+              <p style={{ fontSize: 11, color: "rgba(255,255,255,0.32)", marginBottom: 6 }}>01</p>
+              <p style={{ fontSize: 16 }}>Creative brand design</p>
+            </div>
+            <div>
+              <p style={{ fontSize: 11, color: "rgba(255,255,255,0.32)", marginBottom: 6 }}>02</p>
+              <p style={{ fontSize: 16 }}>Automated marketing</p>
+            </div>
           </div>
         </div>
       </div>
@@ -68,7 +116,7 @@ export default function Home() {
       {/* ════════════════════════════
           DESKTOP  (hidden below md)
       ════════════════════════════ */}
-      <div className="hidden md:flex h-full">
+      <div className="relative hidden md:flex h-full" style={{ zIndex: 10 }}>
 
         {/* PORTFOLIO sidebar */}
         <div className="flex-shrink-0 w-14 flex items-center justify-center">
@@ -93,15 +141,14 @@ export default function Home() {
 
           <h1
             style={{
-              fontSize: "clamp(72px, 9.2vw, 134px)",
               fontWeight: 800,
               lineHeight: 0.92,
               letterSpacing: "-0.02em",
+              textShadow: "0 2px 16px rgba(0,0,0,0.8)",
             }}
           >
-            Digital
-            <br />
-            Marketing
+            <span style={{ display: "block", fontSize: "clamp(72px, 9.2vw, 134px)" }}>AltaMedia</span>
+            <span style={{ display: "block", fontSize: "clamp(40px, 5vw, 72px)", fontWeight: 500, color: "rgba(255,255,255,0.72)", marginTop: "0.15em" }}>Digital Marketing</span>
           </h1>
 
           {/* fills remaining space, pushes bottom group down */}
@@ -122,6 +169,7 @@ export default function Home() {
                 fontWeight: 700,
                 lineHeight: 1.25,
                 marginBottom: "clamp(28px, 3.5vh, 48px)",
+                textShadow: "0 1px 8px rgba(0,0,0,0.7)",
               }}
             >
               We create impactful
@@ -180,7 +228,10 @@ export default function Home() {
 
       </div>
     </main>
+    <GalleryPreview />
     <ServicesSection />
-    </>
+    <CTASection />
+    <Footer />
+</>
   );
 }

@@ -66,112 +66,118 @@ const tiers: PricingTier[] = [
   },
 ];
 
-function PricingCard(props: { tier: PricingTier }): React.JSX.Element {
-  const { tier } = props;
-
-  if (tier.highlighted) {
-    return (
-      <div
-        data-tier-id={tier.id}
-        data-highlighted={tier.highlighted}
-        className="relative flex flex-col w-full rounded-2xl border border-white p-8 scale-[1.03] z-10"
-        style={{ fontFamily: "var(--font-bricolage)" }}
-      >
-        {/* Most Popular badge — top center */}
-        {tier.highlightLabel && (
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-            <span className="bg-white text-black text-xs font-semibold px-4 py-1.5 rounded-full whitespace-nowrap">
-              {tier.highlightLabel}
-            </span>
-          </div>
-        )}
-
-        <h3 className="text-xl font-bold text-white leading-snug mb-3">
-          {tier.name}
-        </h3>
-
-        <p className="text-3xl font-extrabold text-white mb-6">
-          {tier.currency}
-          {tier.price.toLocaleString()}
-        </p>
-
-        <ul className="flex flex-col gap-2 mb-8 flex-1">
-          {tier.inclusions.map((item) => (
-            <li key={item} className="flex items-start gap-2 text-sm text-white leading-relaxed">
-              <span className="mt-0.5 shrink-0 text-white">&#10003;</span>
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <a
-          href={tier.ctaHref}
-          className="block w-full text-center bg-white text-black font-semibold text-sm py-3 px-6 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black hover:bg-white/90 transition-colors"
-        >
-          {tier.ctaLabel}
-        </a>
-      </div>
-    );
-  }
-
-  return (
-    <div
-      data-tier-id={tier.id}
-      data-highlighted={tier.highlighted}
-      className="flex flex-col w-full rounded-2xl border border-white/[0.08] p-8"
-      style={{ fontFamily: "var(--font-bricolage)" }}
-    >
-      <h3 className="text-xl font-bold text-white leading-snug mb-3">
-        {tier.name}
-      </h3>
-
-      <p className="text-3xl font-extrabold text-white mb-6">
-        {tier.currency}
-        {tier.price.toLocaleString()}
-      </p>
-
-      <ul className="flex flex-col gap-2 mb-8 flex-1">
-        {tier.inclusions.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-sm text-white leading-relaxed">
-            <span className="mt-0.5 shrink-0 text-white">&#10003;</span>
-            {item}
-          </li>
-        ))}
-      </ul>
-
-      <a
-        href={tier.ctaHref}
-        className="block w-full text-center bg-transparent border border-white text-white font-semibold text-sm py-3 px-6 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black hover:bg-white/10 transition-colors"
-      >
-        {tier.ctaLabel}
-      </a>
-    </div>
-  );
-}
-
 export default function ServicesSection(): React.JSX.Element {
   return (
     <section
-      className="w-full px-6 py-20 md:px-12 lg:px-20"
-      style={{ backgroundColor: "#111111", fontFamily: "var(--font-bricolage)" }}
+      className="w-full bg-black text-white"
+      style={{ fontFamily: "var(--font-bricolage)" }}
     >
-      <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-14">
-        Food Photography
-      </h2>
+      {/* Top rule — same weight as hero separator */}
+      <div style={{ height: 1, background: "rgba(255,255,255,0.1)" }} />
 
-      {/* Card grid: single column on mobile, 3-column on md+ */}
-      <div className="flex flex-col md:flex-row items-stretch gap-6 md:items-center max-w-5xl mx-auto">
-        {tiers.map((tier) => (
-          <div key={tier.id} className="w-full md:flex-1">
-            <PricingCard tier={tier} />
-          </div>
-        ))}
+      <div style={{ paddingLeft: "8vw", paddingRight: "5%", paddingTop: "clamp(48px,8vh,96px)", paddingBottom: "clamp(48px,8vh,96px)" }}>
+
+        {/* Section label — matches hero "PORTFOLIO" / "SCROLL DOWN" style */}
+        <p style={{ fontSize: "clamp(18px,2vw,26px)", letterSpacing: "0.08em", color: "rgba(255,255,255,0.85)", fontWeight: 700, marginBottom: "clamp(40px,6vh,72px)" }}>
+          Services — Food Photography
+        </p>
+
+        {/* Three columns */}
+        <div className="flex flex-col md:flex-row">
+          {tiers.map((tier, i) => (
+            <div
+              key={tier.id}
+              className="flex flex-col flex-1"
+              style={{
+                background: "rgba(255,255,255,0.13)",
+                border: "1px solid rgba(255,255,255,0.18)",
+                paddingLeft: "clamp(20px,2.5vw,36px)",
+                paddingRight: "clamp(20px,2.5vw,36px)",
+                paddingTop: "clamp(24px,3vh,36px)",
+                paddingBottom: 0,
+                marginRight: i < tiers.length - 1 ? "clamp(8px,1vw,16px)" : 0,
+                marginBottom: "clamp(12px,2vw,0px)",
+              }}
+            >
+              {/* Index */}
+              <p style={{ fontSize: 10, color: "rgba(255,255,255,0.32)", letterSpacing: "0.15em", fontWeight: 400, marginBottom: 14 }}>
+                0{i + 1}
+              </p>
+
+              {/* Name */}
+              <p style={{ fontSize: 14, fontWeight: 600, color: "#ffffff", lineHeight: 1.35, marginBottom: 6 }}>
+                {tier.name}
+              </p>
+
+              {/* Most Popular badge */}
+              {tier.highlighted && tier.highlightLabel && (
+                <p style={{ fontSize: 9, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)", fontWeight: 400, marginBottom: 20 }}>
+                  {tier.highlightLabel}
+                </p>
+              )}
+
+              {/* Price */}
+              <p
+                style={{
+                  fontSize: "clamp(38px,3.8vw,58px)",
+                  fontWeight: 800,
+                  lineHeight: 1,
+                  letterSpacing: "-0.02em",
+                  color: "#ffffff",
+                  marginTop: tier.highlighted ? 0 : 26,
+                  marginBottom: "clamp(24px,3.5vh,40px)",
+                }}
+              >
+                {tier.currency}{tier.price.toLocaleString()}
+              </p>
+
+              {/* Thin divider */}
+              <div style={{ height: 1, background: "rgba(255,255,255,0.75)", marginBottom: "clamp(20px,2.5vh,32px)" }} />
+
+              {/* Inclusions */}
+              <div className="flex flex-col gap-2" style={{ marginBottom: "clamp(28px,4vh,48px)" }}>
+                {tier.inclusions.map((item) => (
+                  <p key={item} style={{ fontSize: 12.5, color: "rgba(255,255,255,0.68)", lineHeight: 1.65, fontWeight: 400 }}>
+                    {item}
+                  </p>
+                ))}
+              </div>
+
+              {/* CTA */}
+              <a
+                href={tier.ctaHref}
+                className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-4"
+                style={{
+                  display: "inline-block",
+                  alignSelf: "flex-start",
+                  marginTop: "auto",
+                  marginBottom: "clamp(24px,3vh,36px)",
+                  padding: "9px 20px",
+                  fontSize: 11,
+                  fontWeight: 600,
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  color: tier.highlighted ? "#000000" : "#ffffff",
+                  background: tier.highlighted ? "#ffffff" : "transparent",
+                  border: tier.highlighted ? "1px solid #ffffff" : "1px solid rgba(255,255,255,0.35)",
+                  textDecoration: "none",
+                  outline: "none",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                {tier.ctaLabel}
+              </a>
+            </div>
+          ))}
+
+        </div>
+
+        {/* Footnote */}
+        <p style={{ fontSize: 12.5, color: "rgba(255,255,255,0.5)", marginTop: "clamp(28px,3.5vh,40px)", fontWeight: 400, lineHeight: 1.7 }}>
+          Additional edited photos: ₱250/photo.&ensp;Commercial advertising usage quoted separately.
+        </p>
+
       </div>
-
-      <p className="text-white/45 text-sm text-center mt-12 max-w-xl mx-auto leading-relaxed">
-        Additional edited photos: ₱250/photo. Commercial advertising usage
-        quoted separately.
-      </p>
     </section>
   );
 }
