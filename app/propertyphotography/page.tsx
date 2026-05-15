@@ -40,6 +40,13 @@ function buildColumns(photos: Photo[]): Photo[][] {
       [photos[2], photos[5], photos[8]],
     ];
   }
+  if (photos.length === 6) {
+    return [
+      [photos[0], photos[3]],
+      [photos[1], photos[4]],
+      [photos[2], photos[5]],
+    ];
+  }
   return [
     [photos[0], photos[4]],
     [photos[1], photos[5]],
