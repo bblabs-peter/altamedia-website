@@ -1,5 +1,6 @@
 import ServicesSection from "./components/ServicesSection";
 import GalleryPreview from "./components/GalleryPreview";
+import PropertyPreview from "./components/PropertyPreview";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 
@@ -229,6 +230,7 @@ export default function Home() {
       </div>
     </main>
     <GalleryPreview />
+    <PropertyPreview />
     <ServicesSection />
     <CTASection />
     <Footer />
