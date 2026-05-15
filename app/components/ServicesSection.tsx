@@ -27,7 +27,7 @@ const tiers: PricingTier[] = [
       "Delivery within 5–7 working days",
     ],
     ctaLabel: "Book Now",
-    ctaHref: "#contact",
+    ctaHref: "/contact",
   },
   {
     id: "core",
@@ -45,7 +45,7 @@ const tiers: PricingTier[] = [
       "Delivery within 5–7 working days",
     ],
     ctaLabel: "Book Now",
-    ctaHref: "#contact",
+    ctaHref: "/contact",
   },
   {
     id: "premium",
@@ -62,7 +62,7 @@ const tiers: PricingTier[] = [
       "Delivery within 3–5 working days",
     ],
     ctaLabel: "Book Now",
-    ctaHref: "#contact",
+    ctaHref: "/contact",
   },
 ];
 
