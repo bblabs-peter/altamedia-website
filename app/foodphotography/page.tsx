@@ -1,12 +1,16 @@
 import GalleryGrid from "./GalleryGrid";
+import { buildColumns, type GalleryLayout, type Photo } from "./galleryColumns";
 import Footer from "../components/Footer";
 
-interface Photo { src: string; alt: string; forcedRatio?: string }
-interface Restaurant { name: string; photos: Photo[] }
+interface Restaurant { name: string; photos: Photo[]; layout?: GalleryLayout }
 
 const restaurants: Restaurant[] = [
   {
     name: "Balay Sang Amo",
+    layout: {
+      columnLayout: [[0, 4], [1, 5], [2, 6], [7, 3]],
+      photoOverrides: { 3: { forcedRatio: "2752/1536" } },
+    },
     photos: [
       { src: "/pics/bsa/1778579297095-tykjw5gl7kp.png", alt: "Balay Sang Amo — photo 1" },
       { src: "/pics/bsa/1778578969424-va2kcb09chq.png", alt: "Balay Sang Amo — photo 2" },
@@ -20,6 +24,7 @@ const restaurants: Restaurant[] = [
   },
   {
     name: "Space Bar",
+    layout: { columnCount: 3 },
     photos: [
       { src: "/pics/space/bbfd4730-90d7-411a-bfa4-0ddd532a0479.png", alt: "Space Bar — photo 1" },
       { src: "/pics/space/1778651417812-03le3kth04z9.png", alt: "Space Bar — photo 2" },
@@ -33,22 +38,6 @@ const restaurants: Restaurant[] = [
     ],
   },
 ];
-
-function buildColumns(photos: Photo[]): Photo[][] {
-  if (photos.length === 9) {
-    return [
-      [photos[0], photos[3], photos[6]],
-      [photos[1], photos[4], photos[7]],
-      [photos[2], photos[5], photos[8]],
-    ];
-  }
-  return [
-    [photos[0], photos[4]],
-    [photos[1], photos[5]],
-    [photos[2], photos[6]],
-    [photos[7], { ...photos[3], forcedRatio: "2752/1536" }],
-  ];
-}
 
 export default function FoodPhotographyPage() {
   return (
@@ -127,7 +116,7 @@ export default function FoodPhotographyPage() {
             {/* Thin rule */}
             <div style={{ height: 1, background: "rgba(255,255,255,0.1)", marginBottom: "clamp(20px,3vh,32px)" }} />
 
-            <GalleryGrid columns={buildColumns(restaurant.photos)} />
+            <GalleryGrid columns={buildColumns(restaurant.photos, restaurant.layout)} />
           </div>
         ))}
       </div>
