@@ -1,8 +1,8 @@
 # Codebase Map — altamedia-website
 
-Last regenerated: 2026-05-15T10:01:50.637Z
+Last regenerated: 2026-05-18T13:29:13.687Z
 Languages: javascript, typescript
-Files indexed: 15 included / 103 visited (max 5000)
+Files indexed: 15 included / 118 visited (max 5000)
 
 ## Top-level structure
 
