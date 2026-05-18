@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "session_id": "019e3b46-c0b4-71f8-b666-2fac0c313358",
+  "produced_at": "2026-05-18T13:58:54.052Z",
+  "project_root": "/Users/petergabrielrlopez/Documents/Altamedia Dev/altamedia-website",
+  "candidates": {
+    "lessons": [
+      {
+        "summary": "BSD/macOS `find` does not support `-printf`; use portable listing commands.",
+        "detail": "A filename listing command used GNU-style `find ... -printf`, which failed with `unknown primary or operator` on this environment. The session recovered by using plain `find` output piped to `sort` for listing files, avoiding GNU-only flags.",
+        "triggers": [
+          {
+            "type": "command",
+            "pattern": "find\\b.*-printf"
+          },
+          {
+            "type": "topic",
+            "value": "portable file listing on macOS/BSD find"
+          }
+        ],
+        "scope_suggestion": "_global",
+        "source_evidence": {
+          "discussion_note_ids": [
+            12
+          ],
+          "lesson_candidate_marker_ids": []
+        }
+      },
+      {
+        "summary": "Do not assume local Next docs exist at `node_modules/next/dist/docs`.",
+        "detail": "The session attempted to read Next documentation under `node_modules/next/dist/docs`, but that directory was absent in the installed Next package. The resolution was to inspect available package files such as `node_modules/next/README.md` or other present files instead of relying on the missing docs path.",
+        "triggers": [
+          {
+            "type": "path",
+            "value": "node_modules/next/dist/docs"
+          },
+          {
+            "type": "filename",
+            "value": "node_modules/next/README.md"
+          },
+          {
+            "type": "topic",
+            "value": "local Next.js package documentation"
+          }
+        ],
+        "scope_suggestion": "altamedia-website",
+        "source_evidence": {
+          "discussion_note_ids": [
+            13
+          ],
+          "lesson_candidate_marker_ids": []
+        }
+      },
+      {
+        "summary": "`discussion_notes` notes must stay under 240 characters.",
+        "detail": "An attempt to add lesson notes failed because a note exceeded the tool's 240-character maximum. The session recovered by rewriting the notes in shorter form and adding them successfully.",
+        "triggers": [
+          {
+            "type": "tool",
+            "value": "discussion_notes",
+            "pattern": "Note is too long|Max 240 characters"
+          }
+        ],
+        "scope_suggestion": "_global",
+        "source_evidence": {
+          "discussion_note_ids": [],
+          "lesson_candidate_marker_ids": [
+            "lcm_1779111409202_ve4ltw"
+          ]
+        }
+      }
+    ],
+    "preferences": [],
+    "decisions": [
+      {
+        "summary": "Masu Cafe food gallery uses all 19 photos in a fixed randomized order.",
+        "detail": "The Masu Cafe section on `/foodphotography` should include all 19 photos from `pics/masu`. Only Masu Cafe is randomized, and the randomization is fixed in code rather than reshuffled per page load so the portfolio remains stable.",
+        "source_evidence": {
+          "discussion_note_ids": [
+            4,
+            8,
+            9,
+            17
+          ]
+        }
+      },
+      {
+        "summary": "/foodphotography` gallery columns are generic for arbitrary photo counts.",
+        "detail": "The gallery layout should not use hardcoded 8- or 9-photo index layouts because that can silently omit future photos. The chosen approach is a generic/data-driven column splitter that distributes photos across columns and preserves all images.",
+        "source_evidence": {
+          "discussion_note_ids": [
+            5,
+            7,
+            10,
+            16
+          ]
+        }
+      },
+      {
+        "summary": "Food gallery image URLs must use files under `public/pics`.",
+        "detail": "Images referenced as `/pics/...` in the Next.js app need corresponding files under `public/pics/...`. For Masu Cafe, assets were copied from `pics/masu` to `public/pics/masu` so `/pics/masu/...` URLs resolve.",
+        "source_evidence": {
+          "discussion_note_ids": [
+            3,
+            11,
+            15
+          ]
+        }
+      }
+    ],
+    "domain": []
+  }
+}
