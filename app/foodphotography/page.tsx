@@ -37,6 +37,31 @@ const restaurants: Restaurant[] = [
       { src: "/pics/space/Gemini_Generated_Image_9kuuvt9kuuvt9kuu.png", alt: "Space Bar — photo 9" },
     ],
   },
+  {
+    name: "Masu Cafe",
+    layout: { columnCount: 4 },
+    photos: [
+      { src: "/pics/masu/689540491_5000782666870901_104579862378613463_n.webp", alt: "Masu Cafe — photo 1" },
+      { src: "/pics/masu/ChatGPT Image May 16, 2026, 06_48_28 PM.webp", alt: "Masu Cafe — photo 2" },
+      { src: "/pics/masu/Masu 18.webp", alt: "Masu Cafe — photo 3" },
+      { src: "/pics/masu/692171174_2160382674505205_4332944749128704583_n.webp", alt: "Masu Cafe — photo 4" },
+      { src: "/pics/masu/ChatGPT Image May 18, 2026, 05_43_49 PM.webp", alt: "Masu Cafe — photo 5" },
+      { src: "/pics/masu/669998926_2180416355833370_8121832679362069636_n.webp", alt: "Masu Cafe — photo 6" },
+      { src: "/pics/masu/696357132_3984342828541847_7550232917483714797_n.webp", alt: "Masu Cafe — photo 7" },
+      { src: "/pics/masu/Masu 102.webp", alt: "Masu Cafe — photo 8" },
+      { src: "/pics/masu/671655580_952531461169145_1494364482560782963_n.webp", alt: "Masu Cafe — photo 9" },
+      { src: "/pics/masu/ChatGPT Image May 16, 2026, 06_39_06 PM.webp", alt: "Masu Cafe — photo 10" },
+      { src: "/pics/masu/Masu 116.webp", alt: "Masu Cafe — photo 11" },
+      { src: "/pics/masu/691213204_1337718128281189_2162836972565109358_n.webp", alt: "Masu Cafe — photo 12" },
+      { src: "/pics/masu/ChatGPT Image May 18, 2026, 05_41_43 PM.webp", alt: "Masu Cafe — photo 13" },
+      { src: "/pics/masu/Masu 52.webp", alt: "Masu Cafe — photo 14" },
+      { src: "/pics/masu/692557266_2183830349029074_6289750409686320390_n.webp", alt: "Masu Cafe — photo 15" },
+      { src: "/pics/masu/ChatGPT Image May 18, 2026, 05_51_04 PM.webp", alt: "Masu Cafe — photo 16" },
+      { src: "/pics/masu/670946416_4483201045300236_3818299436465615249_n.webp", alt: "Masu Cafe — photo 17" },
+      { src: "/pics/masu/ChatGPT Image May 16, 2026, 06_31_32 PM.webp", alt: "Masu Cafe — photo 18" },
+      { src: "/pics/masu/Masu 110.webp", alt: "Masu Cafe — photo 19" },
+    ],
+  },
 ];
 
 export default function FoodPhotographyPage() {
