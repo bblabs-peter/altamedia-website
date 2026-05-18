@@ -31,6 +31,8 @@ export default function GalleryGrid({ columns }: Props) {
                   <img
                     src={photo.src}
                     alt={photo.alt}
+                    loading="lazy"
+                    decoding="async"
                     style={{
                       width: "100%",
                       display: "block",
