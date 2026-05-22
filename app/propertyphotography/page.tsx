@@ -6,6 +6,25 @@ interface Property { name: string; photos: Photo[] }
 
 const properties: Property[] = [
   {
+    name: "Rosebert Suites",
+    photos: [
+      { src: "/pics/rosebert/Rosebert Suites_006.webp", alt: "Rosebert Suites — guest suite" },
+      { src: "/pics/rosebert/1779446838569-1s5q0l2wqa9.webp", alt: "Rosebert Suites — property interior" },
+      { src: "/pics/rosebert/Rosebert Suites_015.webp", alt: "Rosebert Suites — suite detail" },
+      { src: "/pics/rosebert/4a511c28fdf0c325a8187e8caf49057a_c8c03aa9f3114c69b84fe6d95d4f209a.webp", alt: "Rosebert Suites — furnished interior" },
+      { src: "/pics/rosebert/Rosebert Suites_002.webp", alt: "Rosebert Suites — bedroom" },
+      { src: "/pics/rosebert/Rosebert Suites_021.webp", alt: "Rosebert Suites — lounge area" },
+      { src: "/pics/rosebert/f03020293ed39273c4c315f1c13e1158_1_1779446750_6814.webp", alt: "Rosebert Suites — room detail" },
+      { src: "/pics/rosebert/Rosebert Suites_008.webp", alt: "Rosebert Suites — suite interior" },
+      { src: "/pics/rosebert/Rosebert Suites_001.webp", alt: "Rosebert Suites — room interior" },
+      { src: "/pics/rosebert/1779446770803-alrw91oik4l.webp", alt: "Rosebert Suites — property detail" },
+      { src: "/pics/rosebert/Rosebert Suites_018.webp", alt: "Rosebert Suites — furnished suite" },
+      { src: "/pics/rosebert/Rosebert Suites_004.webp", alt: "Rosebert Suites — guest room" },
+      { src: "/pics/rosebert/Rosebert Suites_013.webp", alt: "Rosebert Suites — suite amenity" },
+      { src: "/pics/rosebert/Rosebert Suites_005.webp", alt: "Rosebert Suites — property room" },
+    ],
+  },
+  {
     name: "BHive Hotel",
     photos: [
       { src: "/pics/bhive/5-11-26 BHive Hotel - Common Area 1.webp", alt: "BHive Hotel — common area" },
