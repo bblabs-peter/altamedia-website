@@ -49,6 +49,13 @@ const properties: Property[] = [
 ];
 
 function buildColumns(photos: Photo[]): Photo[][] {
+  if (photos.length === 14) {
+    return [
+      [photos[0], photos[3], photos[6], photos[9], photos[12]],
+      [photos[1], photos[4], photos[7], photos[10], photos[13]],
+      [photos[2], photos[5], photos[8], photos[11]],
+    ];
+  }
   if (photos.length === 9) {
     return [
       [photos[0], photos[3], photos[6]],
