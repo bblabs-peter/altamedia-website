@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "session_id": "019e4f51-76a6-742d-aeae-5b620001376c",
+  "produced_at": "2026-05-22T11:08:14.537Z",
+  "project_root": "/Users/petergabrielrlopez/Documents/Altamedia Dev/altamedia-website",
+  "candidates": {
+    "lessons": [
+      {
+        "summary": "Serve portfolio image assets from public/pics, not root pics, for /pics URLs.",
+        "detail": "During the /propertyphotography smoke test, the page loaded but a Rosebert image URL under /pics/rosebert returned 404 because the files had only been added under the root pics/rosebert directory. Existing working assets were served from public/pics, so the fix was to mirror the Rosebert .webp files into public/pics/rosebert and verify the URLs returned 200.",
+        "triggers": [
+          {
+            "type": "path",
+            "value": "app/propertyphotography/page.tsx"
+          },
+          {
+            "type": "path",
+            "value": "pics/rosebert"
+          },
+          {
+            "type": "path",
+            "value": "public/pics/rosebert"
+          },
+          {
+            "type": "command",
+            "pattern": "^npm run start\\b.*--port 3100"
+          },
+          {
+            "type": "topic",
+            "value": "Next.js public static assets for /pics URLs"
+          }
+        ],
+        "scope_suggestion": "altamedia-website",
+        "source_evidence": {
+          "discussion_note_ids": [
+            17,
+            18,
+            19
+          ],
+          "lesson_candidate_marker_ids": []
+        }
+      },
+      {
+        "summary": "Do not rely on node_modules/next/dist/docs for local Next.js docs in this project.",
+        "detail": "An attempt to follow a presumed local Next docs path at node_modules/next/dist/docs failed because that directory does not exist in the installed next@15.5.18 package. The available local documentation is node_modules/next/README.md, which points to https://nextjs.org/docs.",
+        "triggers": [
+          {
+            "type": "path",
+            "value": "node_modules/next/dist/docs"
+          },
+          {
+            "type": "path",
+            "value": "node_modules/next/README.md"
+          },
+          {
+            "type": "command",
+            "pattern": "^find node_modules/next/dist/docs\\b"
+          },
+          {
+            "type": "topic",
+            "value": "Next.js local package documentation"
+          }
+        ],
+        "scope_suggestion": "altamedia-website",
+        "source_evidence": {
+          "discussion_note_ids": [
+            10
+          ],
+          "lesson_candidate_marker_ids": []
+        }
+      }
+    ],
+    "preferences": [],
+    "decisions": [
+      {
+        "summary": "Rosebert Suites leads the property photography portfolio.",
+        "detail": "Rosebert Suites should appear first on /propertyphotography, with BHive Hotel and Pitstop following after it. This ordering was chosen explicitly by the user rather than appending the new section after existing entries.",
+        "source_evidence": {
+          "discussion_note_ids": [
+            5
+          ]
+        }
+      },
+      {
+        "summary": "Rosebert Suites uses all 14 images in a fixed randomized order.",
+        "detail": "The Rosebert Suites section should include all 14 images from pics/rosebert. The order should be randomized once in source code, not randomized on each page load, to keep the portfolio stable and avoid runtime/hydration issues.",
+        "source_evidence": {
+          "discussion_note_ids": [
+            4,
+            6,
+            7
+          ]
+        }
+      }
+    ],
+    "domain": [
+      {
+        "summary": "Rosebert Suites is a property photography portfolio section.",
+        "detail": "Rosebert Suites is part of the /propertyphotography portfolio and uses Rosebert image assets. The completed implementation references the Rosebert images, displays the section before BHive Hotel and Pitstop, and keeps /propertyphotography static.",
+        "source_evidence": {
+          "discussion_note_ids": [
+            1,
+            11,
+            12,
+            19,
+            20
+          ]
+        }
+      }
+    ]
+  }
+}

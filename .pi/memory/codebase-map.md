@@ -1,8 +1,8 @@
 # Codebase Map — altamedia-website
 
-Last regenerated: 2026-05-18T13:29:13.687Z
+Last regenerated: 2026-05-22T10:53:45.530Z
 Languages: javascript, typescript
-Files indexed: 15 included / 118 visited (max 5000)
+Files indexed: 16 included / 157 visited (max 5000)
 
 ## Top-level structure
 
@@ -17,6 +17,7 @@ Files indexed: 15 included / 118 visited (max 5000)
     - contact/
       - page.tsx [typescript]
     - foodphotography/
+      - galleryColumns.ts [typescript]
       - GalleryGrid.tsx [typescript]
       - page.tsx [typescript]
     - propertyphotography/
@@ -70,6 +71,20 @@ Public surface:
 - default (function, app/components/PropertyPreview.tsx:7-59): function PropertyPreview()
 - default (function, app/components/ServicesSection.tsx:69-183): function ServicesSection(): React.JSX.Element
 
+### app/foodphotography
+
+Owns:
+- app/foodphotography/galleryColumns.ts
+- app/foodphotography/GalleryGrid.tsx
+- app/foodphotography/page.tsx
+
+Public surface:
+- Photo (interface, app/foodphotography/galleryColumns.ts:1-1): interface Photo { src: string; alt: string; forcedRatio?: string }
+- GalleryLayout (interface, app/foodphotography/galleryColumns.ts:3-7): interface GalleryLayout { columnCount?: number; columnLayout?: number[][]; photoOverrides?: Record<number, Partial<Pick<Photo, "forcedRatio">>>; }
+- buildColumns (function, app/foodphotography/galleryColumns.ts:27-54): function buildColumns(photos: Photo[], layout: GalleryLayout = {}): Photo[][]
+- default (function, app/foodphotography/GalleryGrid.tsx:11-102): function GalleryGrid({ columns }: Props)
+- default (function, app/foodphotography/page.tsx:67-152): function FoodPhotographyPage()
+
 ### app/contact
 
 Owns:
@@ -78,16 +93,6 @@ Owns:
 Public surface:
 - metadata (const, app/contact/page.tsx:6-9): const metadata: Metadata = { title: "Contact — AltaMedia", description: "Get in touch with AltaMedia.", }
 - default (function, app/contact/page.tsx:40-150): function ContactPage()
-
-### app/foodphotography
-
-Owns:
-- app/foodphotography/GalleryGrid.tsx
-- app/foodphotography/page.tsx
-
-Public surface:
-- default (function, app/foodphotography/GalleryGrid.tsx:11-100): function GalleryGrid({ columns }: Props)
-- default (function, app/foodphotography/page.tsx:53-138): function FoodPhotographyPage()
 
 ### app/propertyphotography
 

@@ -4,8 +4,8 @@
 project_scope: altamedia-website
 status: active
 session_level: false
-reinforcement_count: 2
-last_seen_at: 2026-05-15T10:32:59.945Z
+reinforcement_count: 3
+last_seen_at: 2026-05-22T11:08:14.546Z
 source_session: 019e2b0b-8116-77db-b722-729a9c2865b3
 created_at: 2026-05-15T10:01:24.053Z
 supersedes: null
@@ -24,18 +24,19 @@ Property photography gallery image URLs should point to files under public/pics.
 project_scope: altamedia-website
 status: active
 session_level: false
-reinforcement_count: 2
-last_seen_at: 2026-05-18T13:58:54.064Z
+reinforcement_count: 4
+last_seen_at: 2026-05-22T11:08:14.546Z
 source_session: 019e2b0b-8116-77db-b722-729a9c2865b3
 created_at: 2026-05-15T10:01:24.053Z
 supersedes: null
 triggers:
   - {type: path, value: node_modules/next/dist/docs}
+  - {type: filename, value: node_modules/next/README.md}
   - {type: command, pattern: "^find node_modules/next\\b.*docs"}
   - {type: topic, value: "Next.js local documentation lookup"}
 -->
 
-node_modules/next/dist/docs may be absent in this Next.js install. If unavailable, verify the Next/package version and follow existing project asset/code patterns instead.
+node_modules/next/dist/docs may be absent in this Next.js install. If unavailable, verify the Next/package version and inspect present package files such as node_modules/next/README.md, or follow existing project asset/code patterns instead.
 
 ## lsn_03 — Keep discussion_notes entries under 240 characters
 
@@ -54,4 +55,22 @@ triggers:
 -->
 
 discussion_notes rejects notes over 240 characters. Summarize long implementation notes under the limit and split extra context into separate shorter notes.
+
+## lsn_04 — BSD/macOS find does not support GNU -printf
+
+<!-- meta:
+project_scope: altamedia-website
+status: active
+session_level: false
+reinforcement_count: 1
+last_seen_at: null
+source_session: 019e3b46-c0b4-71f8-b666-2fac0c313358
+created_at: 2026-05-18T13:58:54.052Z
+supersedes: null
+triggers:
+  - {type: command, pattern: "find\\b.*-printf"}
+  - {type: topic, value: "portable file listing on macOS/BSD find"}
+-->
+
+On this macOS/BSD environment, GNU-style find ... -printf can fail with 'unknown primary or operator'. Use portable alternatives such as plain find output piped to sort for file listings.
 
