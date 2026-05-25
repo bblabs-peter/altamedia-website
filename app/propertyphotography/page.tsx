@@ -46,9 +46,37 @@ const properties: Property[] = [
       { src: "/pics/pitstop/dfde59f93ab105d4dbb94370daaf1e621934846.webp", alt: "Pitstop — furnished room" },
     ],
   },
+  {
+    name: "Empress Palace Pension",
+    photos: [
+      { src: "/pics/empress/Empress - WEBP_001.webp", alt: "Empress Palace Pension — interior 1" },
+      { src: "/pics/empress/Empress - WEBP_002.webp", alt: "Empress Palace Pension — interior 2" },
+      { src: "/pics/empress/Empress - WEBP_003.webp", alt: "Empress Palace Pension — interior 3" },
+      { src: "/pics/empress/Empress - WEBP_004.webp", alt: "Empress Palace Pension — interior 4" },
+      { src: "/pics/empress/Empress - WEBP_005.webp", alt: "Empress Palace Pension — interior 5" },
+      { src: "/pics/empress/Empress - WEBP_006.webp", alt: "Empress Palace Pension — interior 6" },
+      { src: "/pics/empress/Empress - WEBP_007.webp", alt: "Empress Palace Pension — interior 7" },
+      { src: "/pics/empress/Empress - WEBP_008.webp", alt: "Empress Palace Pension — interior 8" },
+      { src: "/pics/empress/Empress - WEBP_009.webp", alt: "Empress Palace Pension — interior 9" },
+      { src: "/pics/empress/Empress - WEBP_010.webp", alt: "Empress Palace Pension — interior 10" },
+      { src: "/pics/empress/Empress - WEBP_011.webp", alt: "Empress Palace Pension — interior 11" },
+      { src: "/pics/empress/Empress - WEBP_012.webp", alt: "Empress Palace Pension — interior 12" },
+      { src: "/pics/empress/Empress - WEBP_013.webp", alt: "Empress Palace Pension — interior 13" },
+      { src: "/pics/empress/Empress - WEBP_014.webp", alt: "Empress Palace Pension — interior 14" },
+      { src: "/pics/empress/Empress - WEBP_015.webp", alt: "Empress Palace Pension — interior 15" },
+      { src: "/pics/empress/Empress - WEBP_016.webp", alt: "Empress Palace Pension — interior 16" },
+    ],
+  },
 ];
 
 function buildColumns(photos: Photo[]): Photo[][] {
+  if (photos.length === 16) {
+    return [
+      [photos[0], photos[3], photos[6], photos[9], photos[12], photos[15]],
+      [photos[1], photos[4], photos[7], photos[10], photos[13]],
+      [photos[2], photos[5], photos[8], photos[11], photos[14]],
+    ];
+  }
   if (photos.length === 14) {
     return [
       [photos[0], photos[3], photos[6], photos[9], photos[12]],
