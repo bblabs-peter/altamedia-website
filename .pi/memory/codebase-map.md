@@ -1,8 +1,8 @@
 # Codebase Map — altamedia-website
 
-Last regenerated: 2026-05-22T10:53:45.530Z
+Last regenerated: 2026-05-25T08:09:20.067Z
 Languages: javascript, typescript
-Files indexed: 16 included / 157 visited (max 5000)
+Files indexed: 16 included / 188 visited (max 5000)
 
 ## Top-level structure
 
@@ -102,7 +102,7 @@ Owns:
 
 Public surface:
 - default (function, app/propertyphotography/GalleryGrid.tsx:11-100): function GalleryGrid({ columns }: Props)
-- default (function, app/propertyphotography/page.tsx:55-140): function PropertyPhotographyPage()
+- default (function, app/propertyphotography/page.tsx:81-166): function PropertyPhotographyPage()
 
 ## Entry points
 

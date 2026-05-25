@@ -48,3 +48,23 @@ created_at: 2026-05-18T13:58:54.052Z
 
 Images referenced as /pics/... in the Next.js app need corresponding files under public/pics/.... For Masu Cafe, assets were copied from pics/masu to public/pics/masu so /pics/masu/... URLs resolve.
 
+## dec_06 — Rosebert Suites leads the property photography portfolio
+
+<!-- meta:
+scope: altamedia-website
+source_session: 019e4f51-76a6-742d-aeae-5b620001376c
+created_at: 2026-05-22T11:08:14.537Z
+-->
+
+Rosebert Suites should appear first on /propertyphotography, with BHive Hotel and Pitstop following after it. This ordering was chosen explicitly by the user rather than appending the new section after existing entries.
+
+## dec_07 — Rosebert Suites uses all 14 images in a fixed randomized order
+
+<!-- meta:
+scope: altamedia-website
+source_session: 019e4f51-76a6-742d-aeae-5b620001376c
+created_at: 2026-05-22T11:08:14.537Z
+-->
+
+The Rosebert Suites section should include all 14 images from pics/rosebert. The order should be randomized once in source code, not randomized on each page load, to keep the portfolio stable and avoid runtime/hydration issues.
+

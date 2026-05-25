@@ -1,22 +1,25 @@
-## lsn_01 — Serve property photography assets from public/pics, not root pics
+## lsn_01 — Serve portfolio image assets from public/pics, not root pics, for /pics URLs
 
 <!-- meta:
 project_scope: altamedia-website
 status: active
 session_level: false
-reinforcement_count: 3
-last_seen_at: 2026-05-22T11:08:14.546Z
+reinforcement_count: 5
+last_seen_at: 2026-05-25T08:58:35.653Z
 source_session: 019e2b0b-8116-77db-b722-729a9c2865b3
 created_at: 2026-05-15T10:01:24.053Z
 supersedes: null
 triggers:
   - {type: path, value: app/propertyphotography/page.tsx}
+  - {type: path, value: pics/rosebert}
+  - {type: path, value: public/pics/rosebert}
   - {type: path, value: pics/pitstop}
   - {type: path, value: public/pics/pitstop}
-  - {type: topic, value: "Next.js public static image assets for property photography"}
+  - {type: command, pattern: "^npm run start\\b.*--port 3100"}
+  - {type: topic, value: "Next.js public static assets for /pics URLs"}
 -->
 
-Property photography gallery image URLs should point to files under public/pics. Pitstop photos were copied from root pics/pitstop to public/pics/pitstop and referenced as /pics/pitstop/... in app/propertyphotography/page.tsx to avoid deployed 404s.
+Image URLs referencing /pics/... need corresponding files under public/pics/.... Pitstop photos were copied from root pics/pitstop to public/pics/pitstop; Rosebert .webp files were similarly mirrored from pics/rosebert to public/pics/rosebert after 404s during smoke testing. Always mirror new portfolio assets into public/pics before referencing them.
 
 ## lsn_02 — Next local docs path may not exist in this project install
 
@@ -24,8 +27,8 @@ Property photography gallery image URLs should point to files under public/pics.
 project_scope: altamedia-website
 status: active
 session_level: false
-reinforcement_count: 4
-last_seen_at: 2026-05-22T11:08:14.546Z
+reinforcement_count: 5
+last_seen_at: 2026-05-25T08:09:19.996Z
 source_session: 019e2b0b-8116-77db-b722-729a9c2865b3
 created_at: 2026-05-15T10:01:24.053Z
 supersedes: null
@@ -36,7 +39,7 @@ triggers:
   - {type: topic, value: "Next.js local documentation lookup"}
 -->
 
-node_modules/next/dist/docs may be absent in this Next.js install. If unavailable, verify the Next/package version and inspect present package files such as node_modules/next/README.md, or follow existing project asset/code patterns instead.
+node_modules/next/dist/docs may be absent in this Next.js install (confirmed absent in next@15.5.18). If unavailable, check node_modules/next/README.md (which points to https://nextjs.org/docs) or follow existing project asset/code patterns instead.
 
 ## lsn_03 — Keep discussion_notes entries under 240 characters
 
