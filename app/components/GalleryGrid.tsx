@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 export interface Photo { src: string; alt: string }
@@ -116,20 +117,18 @@ export default function GalleryGrid({ photos }: Props) {
               key={`${photo.src}-${index}`}
               onClick={() => openPhoto(index)}
               style={{
+                position: "relative",
                 aspectRatio: "3 / 4",
                 overflow: "hidden",
                 cursor: "pointer",
               }}
             >
-              <img
+              <Image
                 src={photo.src}
                 alt={photo.alt}
-                loading="lazy"
-                decoding="async"
+                fill
+                sizes="(min-width:1024px) 25vw,(min-width:768px) 33vw,50vw"
                 style={{
-                  width: "100%",
-                  height: "100%",
-                  display: "block",
                   objectFit: "cover",
                   transition: "opacity 0.2s",
                 }}
@@ -163,6 +162,7 @@ export default function GalleryGrid({ photos }: Props) {
               position: "absolute",
               top: 24,
               right: 28,
+              zIndex: 1,
               background: "none",
               border: "none",
               color: "rgba(255,255,255,0.7)",
@@ -188,6 +188,7 @@ export default function GalleryGrid({ photos }: Props) {
               style={{
                 position: "absolute",
                 left: "clamp(16px,3vw,48px)",
+                zIndex: 1,
                 top: "50%",
                 transform: "translateY(-50%)",
                 alignItems: "center",
@@ -217,6 +218,7 @@ export default function GalleryGrid({ photos }: Props) {
               style={{
                 position: "absolute",
                 right: "clamp(16px,3vw,48px)",
+                zIndex: 1,
                 top: "50%",
                 transform: "translateY(-50%)",
                 alignItems: "center",
@@ -235,17 +237,23 @@ export default function GalleryGrid({ photos }: Props) {
           )}
 
           {/* Image — stop click from bubbling to overlay */}
-          <img
-            src={active.src}
-            alt={active.alt}
-            onClick={(e) => e.stopPropagation()}
+          <div
+            onClick={(event) => event.stopPropagation()}
             style={{
-              maxWidth: "100%",
-              maxHeight: "100%",
-              objectFit: "contain",
-              display: "block",
+              position: "relative",
+              width: "100%",
+              height: "100%",
             }}
-          />
+          >
+            <Image
+              src={active.src}
+              alt={active.alt}
+              fill
+              priority
+              sizes="100vw"
+              style={{ objectFit: "contain" }}
+            />
+          </div>
         </div>
       )}
     </>
