@@ -1,8 +1,8 @@
 # Codebase Map — altamedia-website
 
-Last regenerated: 2026-05-25T08:09:20.067Z
+Last regenerated: 2026-05-28T03:47:56.807Z
 Languages: javascript, typescript
-Files indexed: 16 included / 188 visited (max 5000)
+Files indexed: 15 included / 241 visited (max 5000)
 
 ## Top-level structure
 
@@ -11,6 +11,7 @@ Files indexed: 16 included / 188 visited (max 5000)
     - components/
       - CTASection.tsx [typescript]
       - Footer.tsx [typescript]
+      - GalleryGrid.tsx [typescript]
       - GalleryPreview.tsx [typescript]
       - PropertyPreview.tsx [typescript]
       - ServicesSection.tsx [typescript]
@@ -18,10 +19,8 @@ Files indexed: 16 included / 188 visited (max 5000)
       - page.tsx [typescript]
     - foodphotography/
       - galleryColumns.ts [typescript]
-      - GalleryGrid.tsx [typescript]
       - page.tsx [typescript]
     - propertyphotography/
-      - GalleryGrid.tsx [typescript]
       - page.tsx [typescript]
     - layout.tsx [typescript]
     - page.tsx [typescript]
@@ -60,6 +59,7 @@ Public surface:
 Owns:
 - app/components/CTASection.tsx
 - app/components/Footer.tsx
+- app/components/GalleryGrid.tsx
 - app/components/GalleryPreview.tsx
 - app/components/PropertyPreview.tsx
 - app/components/ServicesSection.tsx
@@ -67,6 +67,8 @@ Owns:
 Public surface:
 - default (function, app/components/CTASection.tsx:4-64): function CTASection(): React.JSX.Element
 - default (function, app/components/Footer.tsx:3-62): function Footer(): React.JSX.Element
+- Photo (interface, app/components/GalleryGrid.tsx:5-5): interface Photo { src: string; alt: string; forcedRatio?: string }
+- default (function, app/components/GalleryGrid.tsx:28-272): function GalleryGrid({ columns, photos }: Props)
 - default (function, app/components/GalleryPreview.tsx:7-57): function GalleryPreview()
 - default (function, app/components/PropertyPreview.tsx:7-59): function PropertyPreview()
 - default (function, app/components/ServicesSection.tsx:69-183): function ServicesSection(): React.JSX.Element
@@ -75,14 +77,12 @@ Public surface:
 
 Owns:
 - app/foodphotography/galleryColumns.ts
-- app/foodphotography/GalleryGrid.tsx
 - app/foodphotography/page.tsx
 
 Public surface:
 - Photo (interface, app/foodphotography/galleryColumns.ts:1-1): interface Photo { src: string; alt: string; forcedRatio?: string }
 - GalleryLayout (interface, app/foodphotography/galleryColumns.ts:3-7): interface GalleryLayout { columnCount?: number; columnLayout?: number[][]; photoOverrides?: Record<number, Partial<Pick<Photo, "forcedRatio">>>; }
 - buildColumns (function, app/foodphotography/galleryColumns.ts:27-54): function buildColumns(photos: Photo[], layout: GalleryLayout = {}): Photo[][]
-- default (function, app/foodphotography/GalleryGrid.tsx:11-102): function GalleryGrid({ columns }: Props)
 - default (function, app/foodphotography/page.tsx:67-152): function FoodPhotographyPage()
 
 ### app/contact
@@ -97,12 +97,10 @@ Public surface:
 ### app/propertyphotography
 
 Owns:
-- app/propertyphotography/GalleryGrid.tsx
 - app/propertyphotography/page.tsx
 
 Public surface:
-- default (function, app/propertyphotography/GalleryGrid.tsx:11-100): function GalleryGrid({ columns }: Props)
-- default (function, app/propertyphotography/page.tsx:81-166): function PropertyPhotographyPage()
+- default (function, app/propertyphotography/page.tsx:109-194): function PropertyPhotographyPage()
 
 ## Entry points
 

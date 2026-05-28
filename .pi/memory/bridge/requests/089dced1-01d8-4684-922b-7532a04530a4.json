@@ -1,0 +1,9 @@
+{
+  "id": "089dced1-01d8-4684-922b-7532a04530a4",
+  "type": "validate_tags",
+  "payload": {
+    "planText": "Gallery in-section navigation plan. Section 4 tasks: (1) Create shared app/components/GalleryGrid.tsx with prev/next arrows (desktop, minimal chevrons), keyboard ArrowLeft/Right/Escape, mobile swipe left/right, curated-order index, stop-at-ends. (2) Wire foodphotography page. (3) Wire propertyphotography page. (4) Delete obsolete per-page GalleryGrid.tsx and verify mobile swipe. No [DOCS:*] or [ADR:*] tags are used in this plan; no engineering-docs scaffold exists in the repo and the change is a minor component consolidation."
+  },
+  "ts": 1779939264084,
+  "source": "claude-code"
+}

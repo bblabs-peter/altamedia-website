@@ -1,0 +1,23 @@
+{
+  "id": "437ef6d2-a859-45f7-89e7-d049a7447319",
+  "type": "capture",
+  "payload": {
+    "notes": [
+      {
+        "type": "implementation",
+        "text": "Pages diverged on column-building. propertyphotography/page.tsx has its OWN inline buildColumns (lines 72-107): switch on photos.length (16/14/9/6 -> preset splits; else 4-col branch injecting forcedRatio '2752/1536' on photo 3). Does NOT import galleryColumns. foodphotography/page.tsx imports buildColumns+GalleryLayout from ./galleryColumns with per-restaurant layout configs. Both feed GalleryGrid columns:Photo[][]+photos."
+      },
+      {
+        "type": "decision",
+        "text": "Uniform 3:4 refactor: change GalleryGrid to render a responsive CSS grid from the flat `photos` array and DROP the `columns` prop. Lightbox already keys off `photos`, unaffected. Eliminates both buildColumns impls."
+      },
+      {
+        "type": "implementation",
+        "text": "Dead-code after refactor: galleryColumns.ts likely unused, property page local buildColumns + 2752/1536 override removed. Must grep to confirm no other importers of galleryColumns before deleting (grep currently hook-blocked here; verify in plan/build)."
+      }
+    ],
+    "context": "Discuss: blast-radius check of property page for the uniform 3:4 grid refactor."
+  },
+  "ts": 1779940669334,
+  "source": "claude-code"
+}

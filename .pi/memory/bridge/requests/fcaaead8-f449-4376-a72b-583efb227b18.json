@@ -1,0 +1,23 @@
+{
+  "id": "fcaaead8-f449-4376-a72b-583efb227b18",
+  "type": "capture",
+  "payload": {
+    "notes": [
+      {
+        "type": "implementation",
+        "text": "GalleryGrid.tsx already implements the click-to-reveal lightbox: fullscreen overlay with objectFit:contain (uncropped full image), prev/next arrow buttons, keyboard nav (Arrow keys + Escape), and touch swipe. The 'reveal full image with no crop' requirement is already satisfied by existing code."
+      },
+      {
+        "type": "implementation",
+        "text": "Current grid is a column-based MASONRY, not a uniform grid. app/foodphotography/page.tsx (and property) pass photos through buildColumns(photos, layout) from galleryColumns. Each restaurant has a per-section layout: columnLayout (explicit column assignments), columnCount, and photoOverrides.forcedRatio. By default thumbnails render at NATURAL aspect ratio (width:100%, height auto), so column heights stagger. Only cells with forcedRatio get aspectRatio + object-fit:cover."
+      },
+      {
+        "type": "requirement",
+        "text": "User wants food (/foodphotography) and property (/propertyphotography) portfolio grid thumbnails to be uniform/neat using a 4:3 aspect ratio (cropped), while clicking an image reveals the full uncropped image."
+      }
+    ],
+    "context": "Discuss: changing food/property portfolio grids to uniform 4:3 thumbnails with uncropped full reveal on click. Grounding findings from reading code."
+  },
+  "ts": 1779940353605,
+  "source": "claude-code"
+}

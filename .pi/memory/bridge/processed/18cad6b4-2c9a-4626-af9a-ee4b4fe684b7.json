@@ -1,0 +1,8 @@
+{
+  "id": "18cad6b4-2c9a-4626-af9a-ee4b4fe684b7",
+  "ok": false,
+  "error": {
+    "code": "capture_failed",
+    "message": "Note is too long. Max 480 characters."
+  }
+}

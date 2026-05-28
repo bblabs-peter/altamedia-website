@@ -1,0 +1,10 @@
+{
+  "id": "8c95e12e-879c-4e26-8dd1-02d22320bc8c",
+  "type": "recall",
+  "payload": {
+    "query": "portfolio grid foodphotography propertyphotography gallery 4:3 aspect ratio image crop lightbox shared grid",
+    "mode": "discuss"
+  },
+  "ts": 1779940186305,
+  "source": "claude-code"
+}

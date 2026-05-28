@@ -1,0 +1,15 @@
+{
+  "id": "8d71b30a-cf6f-455f-a7cc-23348a4de331",
+  "type": "capture",
+  "payload": {
+    "notes": [
+      {
+        "type": "decision",
+        "text": "Next/prev navigation follows the CURATED photo order (the order in page.tsx restaurants[].photos / properties[].photos), NOT the visual column-flattened order. Implication: GalleryGrid must receive/know the original ordered photo list and the active photo's index within it."
+      }
+    ],
+    "context": "Discuss: gallery navigation order decision"
+  },
+  "ts": 1779938956588,
+  "source": "claude-code"
+}

@@ -4,8 +4,8 @@
 project_scope: altamedia-website
 status: active
 session_level: false
-reinforcement_count: 5
-last_seen_at: 2026-05-25T08:58:35.653Z
+reinforcement_count: 6
+last_seen_at: 2026-05-28T03:47:19.391Z
 source_session: 019e2b0b-8116-77db-b722-729a9c2865b3
 created_at: 2026-05-15T10:01:24.053Z
 supersedes: null
@@ -27,19 +27,19 @@ Image URLs referencing /pics/... need corresponding files under public/pics/....
 project_scope: altamedia-website
 status: active
 session_level: false
-reinforcement_count: 5
-last_seen_at: 2026-05-25T08:09:19.996Z
+reinforcement_count: 7
+last_seen_at: 2026-05-28T03:47:56.749Z
 source_session: 019e2b0b-8116-77db-b722-729a9c2865b3
 created_at: 2026-05-15T10:01:24.053Z
 supersedes: null
 triggers:
   - {type: path, value: node_modules/next/dist/docs}
   - {type: filename, value: node_modules/next/README.md}
-  - {type: command, pattern: "^find node_modules/next\\b.*docs"}
+  - {type: command, pattern: "^find node_modules/next(?:/dist)?\\b.*docs"}
   - {type: topic, value: "Next.js local documentation lookup"}
 -->
 
-node_modules/next/dist/docs may be absent in this Next.js install (confirmed absent in next@15.5.18). If unavailable, check node_modules/next/README.md (which points to https://nextjs.org/docs) or follow existing project asset/code patterns instead.
+node_modules/next/dist/docs may be absent in this Next.js install. If unavailable, check node_modules/next/README.md or follow existing project patterns and validate with npm run build.
 
 ## lsn_03 — Keep discussion_notes entries under 240 characters
 

@@ -1,0 +1,23 @@
+{
+  "id": "50bf867a-12d9-41f0-a81e-b8c20a91ec4d",
+  "type": "capture",
+  "payload": {
+    "notes": [
+      {
+        "type": "implementation",
+        "text": "app/foodphotography/GalleryGrid.tsx and app/propertyphotography/GalleryGrid.tsx are near-identical client components. Each already has a single-image lightbox modal driven by useState<Photo|null> 'active', opened on image click, closed on overlay/✕ click. No next/prev navigation today."
+      },
+      {
+        "type": "implementation",
+        "text": "GalleryGrid receives a `columns: Photo[][]` prop (2D, arranged by visual column via buildColumns in galleryColumns.ts). The original per-section photo order lives in page.tsx restaurants[].photos / properties[].photos and differs from the column-flattened order."
+      },
+      {
+        "type": "implementation",
+        "text": "Each page (foodphotography/page.tsx) renders one GalleryGrid per section (restaurant/property). A 'section' = one restaurant or property's photo set. User wants next/prev scoped within the respective section."
+      }
+    ],
+    "context": "Discuss: adding next/prev arrow + mobile swipe navigation to food/property photography galleries"
+  },
+  "ts": 1779938917053,
+  "source": "claude-code"
+}

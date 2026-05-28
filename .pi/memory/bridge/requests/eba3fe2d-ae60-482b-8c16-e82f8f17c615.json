@@ -1,0 +1,23 @@
+{
+  "id": "eba3fe2d-ae60-482b-8c16-e82f8f17c615",
+  "type": "capture",
+  "payload": {
+    "notes": [
+      {
+        "type": "decision",
+        "text": "Food and property portfolio grids will be refactored to a UNIFORM, aligned grid (not masonry). Every thumbnail is an equal 3:4 PORTRAIT tile, center-cropped (object-fit:cover). User initially said 4:3 but switched to 3:4 to better accommodate portrait source images. Applies to all images regardless of original orientation."
+      },
+      {
+        "type": "decision",
+        "text": "The per-restaurant masonry config system (buildColumns, columnLayout, forcedRatio, photoOverrides in galleryColumns) is to be refactored away / replaced as part of this change. Treat as a layout refactor."
+      },
+      {
+        "type": "constraint",
+        "text": "Lightbox uncropped full-image reveal on click must be preserved (already exists in GalleryGrid.tsx). Only the grid thumbnail layout changes."
+      }
+    ],
+    "context": "Discuss: grid refactor decision confirmed by user."
+  },
+  "ts": 1779940538994,
+  "source": "claude-code"
+}

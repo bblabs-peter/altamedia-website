@@ -1,0 +1,10 @@
+{
+  "id": "345412dc-3a46-46d1-8fc0-5b4ce2f48e0e",
+  "type": "recall",
+  "payload": {
+    "query": "uniform 3:4 grid refactor GalleryGrid columns prop drop CSS grid foodphotography propertyphotography galleryColumns buildColumns lightbox",
+    "mode": "plan"
+  },
+  "ts": 1779940693657,
+  "source": "claude-code"
+}

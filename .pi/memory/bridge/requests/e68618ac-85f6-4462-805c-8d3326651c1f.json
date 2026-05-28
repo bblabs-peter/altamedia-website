@@ -1,0 +1,10 @@
+{
+  "id": "e68618ac-85f6-4462-805c-8d3326651c1f",
+  "type": "recall",
+  "payload": {
+    "query": "food property photography gallery lightbox next prev arrows swipe navigation curated order GalleryGrid shared component",
+    "mode": "plan"
+  },
+  "ts": 1779939120203,
+  "source": "claude-code"
+}

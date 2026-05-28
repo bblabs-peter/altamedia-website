@@ -1,0 +1,22 @@
+{
+  "id": "089dced1-01d8-4684-922b-7532a04530a4",
+  "ok": true,
+  "result": {
+    "requestId": "089dced1-01d8-4684-922b-7532a04530a4",
+    "valid": false,
+    "validations": [
+      {
+        "tag": "[DOCS:*]",
+        "valid": false,
+        "error": "Unknown docs area: *. Valid areas: architecture, dev-workflow, conventions, invariants, traps, decisions"
+      }
+    ],
+    "invalid": [
+      {
+        "tag": "[DOCS:*]",
+        "valid": false,
+        "error": "Unknown docs area: *. Valid areas: architecture, dev-workflow, conventions, invariants, traps, decisions"
+      }
+    ]
+  }
+}

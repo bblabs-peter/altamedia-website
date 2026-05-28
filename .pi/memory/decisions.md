@@ -68,3 +68,43 @@ created_at: 2026-05-22T11:08:14.537Z
 
 The Rosebert Suites section should include all 14 images from pics/rosebert. The order should be randomized once in source code, not randomized on each page load, to keep the portfolio stable and avoid runtime/hydration issues.
 
+## dec_08 — Photography lightbox navigation follows curated section order without wrap-around
+
+<!-- meta:
+scope: altamedia-website
+source_session: claude-code-f9ad08ea-b7d2-470b-a669-847512592b57
+created_at: 2026-05-28T03:32:43.163Z
+-->
+
+Next/prev navigation for food and property lightboxes uses the page data photos[] order, not visual column order. Navigation is bounded at the first/last photo and never crosses into another section.
+
+## dec_09 — Gallery lightbox controls differ by desktop vs mobile
+
+<!-- meta:
+scope: altamedia-website
+source_session: claude-code-f9ad08ea-b7d2-470b-a669-847512592b57
+created_at: 2026-05-28T03:32:43.163Z
+-->
+
+Desktop lightboxes use minimal semi-transparent bare chevrons, keyboard Left/Right navigation, and Esc to close. Mobile hides arrows and uses left/right swipe only for prev/next; swipe-down does not close.
+
+## dec_10 — GalleryGrid is shared at app/components/GalleryGrid.tsx, but column-building stays page-specific
+
+<!-- meta:
+scope: altamedia-website
+source_session: claude-code-f9ad08ea-b7d2-470b-a669-847512592b57
+created_at: 2026-05-28T03:32:43.163Z
+-->
+
+Food and property pages import the shared GalleryGrid from app/components/GalleryGrid.tsx. Column-building was intentionally not shared because food uses galleryColumns.ts with config while property uses inline length-based layouts.
+
+## dec_11 — Shared GalleryGrid receives flat photos[] for curated-index navigation
+
+<!-- meta:
+scope: altamedia-website
+source_session: 019e6c9c-704a-79b5-9336-0fe71b7ae334
+created_at: 2026-05-28T03:47:19.384Z
+-->
+
+The shared GalleryGrid API takes both columns and flat photos so the lightbox can navigate by curated index without relying on object identity or src matching.
+

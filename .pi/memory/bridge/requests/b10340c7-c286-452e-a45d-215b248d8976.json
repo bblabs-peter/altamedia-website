@@ -1,0 +1,10 @@
+{
+  "id": "b10340c7-c286-452e-a45d-215b248d8976",
+  "type": "recall",
+  "payload": {
+    "query": "dev server constant recompiling compiled in ms 242 modules Next.js fast refresh loop watch",
+    "mode": "discuss"
+  },
+  "ts": 1779943786776,
+  "source": "claude-code"
+}

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "projectRoot": "/Users/petergabrielrlopez/Documents/Altamedia Dev/altamedia-website",
+  "bridgeSessionId": "870f2630-5295-4e58-931f-b922683e23c6",
+  "pid": 99638,
+  "writtenAt": "2026-05-28T05:03:03.811Z",
+  "expiresAt": "2026-05-28T05:03:07.811Z",
+  "policy": {
+    "mutationTools": [
+      "write",
+      "edit"
+    ],
+    "discussBashAllow": "^(pwd|ls(\\s|$)|find(\\s|$)|rg(\\s|$)|grep(\\s|$)|ccc\\s+search(\\s|$))",
+    "planBashAllow": "^(pwd|ls(\\s|$)|find(\\s|$)|rg(\\s|$)|grep(\\s|$)|ccc\\s+(search|index)(\\s|$)|.*\\b(test|tests|check|checks|lint|typecheck|tsc|build|compile|gradle|mvn|pytest|cargo test|go test|swift test)\\b)",
+    "bashMutationDeny": "(^|[;&|()]\\s*)(rm|mv|cp|mkdir|rmdir|touch|chmod|chown|ln|tee|cat\\s*>|python|python3|node|perl|ruby|sh|bash|zsh|fish|npm\\s+(i|install|add|update|audit\\s+fix)|pnpm\\s+(i|install|add|update)|yarn\\s+(add|install|upgrade)|bun\\s+(add|install)|pip\\s+install|cargo\\s+(add|update|install)|go\\s+get|git\\s+(add|commit|push|pull|merge|rebase|reset|checkout|switch|restore|clean|stash)|.*\\b(format|fmt|fix|write|migrate|migration)\\b)",
+    "bashWriteRedirect": "(^|[^<])>(?!>?)|>>"
+  }
+}

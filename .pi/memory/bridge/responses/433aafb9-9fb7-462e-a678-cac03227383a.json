@@ -1,0 +1,18 @@
+{
+  "id": "433aafb9-9fb7-462e-a678-cac03227383a",
+  "ok": true,
+  "result": {
+    "requestId": "433aafb9-9fb7-462e-a678-cac03227383a",
+    "noteIds": [
+      12,
+      13
+    ],
+    "noteId": 12,
+    "added": 2,
+    "skipped": [],
+    "stagingFile": "/Users/petergabrielrlopez/Documents/Altamedia Dev/altamedia-website/.pi/memory/staging/claude-code-f9ad08ea-b7d2-470b-a669-847512592b57.json",
+    "widgetUpdated": true,
+    "source": "claude-code",
+    "projectRoot": "/Users/petergabrielrlopez/Documents/Altamedia Dev/altamedia-website"
+  }
+}

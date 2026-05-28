@@ -1,0 +1,19 @@
+{
+  "id": "433aafb9-9fb7-462e-a678-cac03227383a",
+  "type": "capture",
+  "payload": {
+    "notes": [
+      {
+        "type": "requirement",
+        "text": "Food & property photography lightboxes get in-section image navigation: next/prev arrow buttons on desktop (+ keyboard Left/Right, + Esc to close), swipe left/right on mobile (arrows hidden on mobile). Order = curated photos[] order, no wrap-around, scoped to the single section."
+      },
+      {
+        "type": "question",
+        "text": "Open for planning: (1) shared GalleryGrid file location e.g. app/components/GalleryGrid.tsx; (2) should swipe-down close the lightbox on mobile; (3) arrow button visual styling/placement."
+      }
+    ],
+    "context": "Discuss handoff: gallery in-section navigation feature shaped, ready for /plan"
+  },
+  "ts": 1779939101187,
+  "source": "claude-code"
+}

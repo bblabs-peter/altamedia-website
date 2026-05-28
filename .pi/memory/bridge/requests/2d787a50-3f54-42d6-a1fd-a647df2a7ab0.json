@@ -1,0 +1,23 @@
+{
+  "id": "2d787a50-3f54-42d6-a1fd-a647df2a7ab0",
+  "type": "capture",
+  "payload": {
+    "notes": [
+      {
+        "type": "implementation",
+        "text": "Dev script is plain `next dev` (package.json:6) and next.config.ts is empty (no watchOptions.ignored). Next 15.5 / React 19 / Tailwind v4. The Next dev watcher only excludes node_modules and .next by default; it does NOT honor .gitignore."
+      },
+      {
+        "type": "question",
+        "text": "LIKELY CAUSE (config-confirmed, not FS-watched): endless dev recompile loop is caused by a background process writing files inside the project root that the Next watcher monitors. Candidates: .pi/memory/ (index.db, staging/*.json, bridge/ — written continuously by Pi bridge) and .cocoindex_code/ (ccc indexer, gitignored at .gitignore:43 but gitignore does not affect the watcher). Each write -> recompile. Need to confirm which writer is active via fswatch/lsof at build time."
+      },
+      {
+        "type": "decision",
+        "text": "Recommended fix (not yet applied; discuss mode is read-only): add webpack watchOptions.ignored to next.config.ts excluding **/node_modules/**, **/.git/**, **/.pi/**, **/.cocoindex_code/**. If dev later uses --turbopack, use the turbopack-equivalent ignore instead since webpack() config is not used under turbopack."
+      }
+    ],
+    "context": "Discuss: diagnosing endless 'Compiled in Xms (242 modules)' recompile loop in next dev console."
+  },
+  "ts": 1779943867415,
+  "source": "claude-code"
+}

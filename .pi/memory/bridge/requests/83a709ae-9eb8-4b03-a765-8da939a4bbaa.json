@@ -1,0 +1,19 @@
+{
+  "id": "83a709ae-9eb8-4b03-a765-8da939a4bbaa",
+  "type": "capture",
+  "payload": {
+    "notes": [
+      {
+        "type": "implementation",
+        "text": "Only the GalleryGrid.tsx component is byte-identical across food/property. Column-building DIFFERS: food uses shared app/foodphotography/galleryColumns.ts buildColumns(photos, layout) with config; property/page.tsx has its own inline buildColumns(photos) with hardcoded length-based (16/14/9/6/default) layouts. So extract/share only GalleryGrid, NOT the column logic."
+      },
+      {
+        "type": "constraint",
+        "text": "Curated-order nav needs GalleryGrid to know each thumbnail's index in the flat curated photos[] array. Reference equality is unreliable because forcedRatio overrides create NEW photo objects (food applyPhotoOverrides, property spreads {...photos[3], forcedRatio}). Plan must pass the flat ordered photos[] list (or per-thumbnail flat index) into the shared GalleryGrid, not rely on object identity or src matching."
+      }
+    ],
+    "context": "Discuss: correcting duplication scope + identity challenge for curated-order nav"
+  },
+  "ts": 1779939085724,
+  "source": "claude-code"
+}

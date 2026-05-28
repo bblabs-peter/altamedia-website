@@ -1,0 +1,23 @@
+{
+  "id": "4feb6ce2-ae57-4dac-b8f9-a8a966ff1bd0",
+  "type": "capture",
+  "payload": {
+    "notes": [
+      {
+        "type": "decision",
+        "text": "Mobile (touch/small screens): swipe left/right is the only navigation; on-screen arrow buttons are hidden. Desktop: arrow buttons visible (plus keyboard). So arrows are desktop-only, swipe is mobile-only."
+      },
+      {
+        "type": "decision",
+        "text": "Refactor the two identical GalleryGrid copies (foodphotography + propertyphotography) into ONE shared component rather than editing both copies. Both pages will import the shared component."
+      },
+      {
+        "type": "question",
+        "text": "Where should the shared GalleryGrid live (e.g. app/components/GalleryGrid.tsx) and is galleryColumns.ts also duplicated across both sections (should it be shared too)? Verify all consumers before refactor."
+      }
+    ],
+    "context": "Discuss: mobile arrows + code structure decisions"
+  },
+  "ts": 1779939048548,
+  "source": "claude-code"
+}

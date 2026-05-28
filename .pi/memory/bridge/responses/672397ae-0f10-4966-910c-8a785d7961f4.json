@@ -1,0 +1,22 @@
+{
+  "id": "672397ae-0f10-4966-910c-8a785d7961f4",
+  "ok": true,
+  "result": {
+    "requestId": "672397ae-0f10-4966-910c-8a785d7961f4",
+    "valid": false,
+    "validations": [
+      {
+        "tag": "[DOCS:*]",
+        "valid": false,
+        "error": "Unknown docs area: *. Valid areas: architecture, dev-workflow, conventions, invariants, traps, decisions"
+      }
+    ],
+    "invalid": [
+      {
+        "tag": "[DOCS:*]",
+        "valid": false,
+        "error": "Unknown docs area: *. Valid areas: architecture, dev-workflow, conventions, invariants, traps, decisions"
+      }
+    ]
+  }
+}

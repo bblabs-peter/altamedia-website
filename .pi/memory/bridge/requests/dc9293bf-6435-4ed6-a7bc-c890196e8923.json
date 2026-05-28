@@ -1,0 +1,27 @@
+{
+  "id": "dc9293bf-6435-4ed6-a7bc-c890196e8923",
+  "type": "capture",
+  "payload": {
+    "notes": [
+      {
+        "type": "decision",
+        "text": "New GalleryGrid API: props become { photos: Photo[] } only (drop columns). Render a responsive grid using Tailwind classes grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 (2 mobile/3 tablet/4 desktop) with inline style gap clamp(6px,0.8vw,12px). Each tile: inline aspectRatio '3 / 4', overflow hidden, cursor pointer; img width/height 100% object-fit cover. Lightbox block unchanged."
+      },
+      {
+        "type": "decision",
+        "text": "Photo type consolidation: delete galleryColumns.ts and import Photo from GalleryGrid in both pages (GalleryGrid already exports Photo). Remove the now-dead forcedRatio field from the Photo type and all usages."
+      },
+      {
+        "type": "constraint",
+        "text": "Project convention: heavy inline styles plus Tailwind utility classes (e.g. className 'hidden md:flex'). Use Tailwind only for the responsive column count (needs media queries); keep everything else inline to match existing style. Font via var(--font-bricolage); pages are black bg/white text."
+      },
+      {
+        "type": "question",
+        "text": "Bash/grep is hook-blocked in this Claude Code planning session, so I could not confirm via grep that nothing besides foodphotography/page.tsx imports galleryColumns. Must verify at build time before deleting the module."
+      }
+    ],
+    "context": "Plan: concrete implementation decisions for the uniform 3:4 grid refactor."
+  },
+  "ts": 1779940733411,
+  "source": "claude-code"
+}

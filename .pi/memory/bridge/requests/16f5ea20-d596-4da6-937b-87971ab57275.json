@@ -1,0 +1,15 @@
+{
+  "id": "16f5ea20-d596-4da6-937b-87971ab57275",
+  "type": "capture",
+  "payload": {
+    "notes": [
+      {
+        "type": "decision",
+        "text": "Grid uses ONE consistent responsive column count across both /foodphotography and /propertyphotography (and all sections): approx 2 columns mobile / 3 tablet / 4 desktop. Per-section columnCount/columnLayout config is removed. Center-crop anchor for 3:4 tiles is center (object-fit:cover default)."
+      }
+    ],
+    "context": "Discuss: column-count decision confirmed."
+  },
+  "ts": 1779940595480,
+  "source": "claude-code"
+}

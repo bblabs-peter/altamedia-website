@@ -1,0 +1,9 @@
+{
+  "id": "1c1f4436-05a3-40e0-a61d-42c1e26da88f",
+  "type": "validate_tags",
+  "payload": {
+    "planText": "Plan: Uniform 3:4 portfolio grid refactor.\n\nSection 4 tasks:\n- Refactor GalleryGrid to a uniform 3:4 responsive grid rendered from flat photos array; drop columns prop; remove forcedRatio from Photo type.\n- Convert foodphotography/page.tsx to pass flat photos and drop masonry layout config; import Photo from GalleryGrid.\n- Convert propertyphotography/page.tsx to pass flat photos and delete local buildColumns (incl 2752/1536 override); import Photo from GalleryGrid.\n- Delete galleryColumns.ts and confirm no dangling references; build passes.\n- Manual browser verification across breakpoints (2/3/4 columns) and lightbox uncropped reveal.\n\nNo docs or ADR tags included: this is an internal layout refactor of portfolio pages with no change to documented architecture, dev workflow, conventions, invariants, traps, or high-impact decisions."
+  },
+  "ts": 1779940795923,
+  "source": "claude-code"
+}

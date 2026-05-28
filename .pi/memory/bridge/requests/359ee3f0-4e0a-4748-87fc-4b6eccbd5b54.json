@@ -1,0 +1,9 @@
+{
+  "id": "359ee3f0-4e0a-4748-87fc-4b6eccbd5b54",
+  "type": "validate_tags",
+  "payload": {
+    "planText": "# Plan: Stop the endless next dev recompile loop\n\n## Section 4 — Tasks\n\n- [ ] Confirm the bundler and the offending writer\n  - Verify dev script bundler and identify which in-root process writes continuously.\n\n- [ ] Add watchOptions.ignored to next.config.ts to exclude tool dirs from the dev file watcher\n  - Exclude node_modules, .git, .pi, .cocoindex_code from the webpack dev watcher.\n\n- [ ] [DOCS:traps] Document the dev-watcher recompile-loop gotcha\n  - Record that .gitignore does not affect the Next dev watcher and that .pi/.cocoindex_code writes cause recompile loops unless ignored."
+  },
+  "ts": 1779943949524,
+  "source": "claude-code"
+}

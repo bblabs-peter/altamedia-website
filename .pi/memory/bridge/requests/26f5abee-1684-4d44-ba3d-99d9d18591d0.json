@@ -1,0 +1,23 @@
+{
+  "id": "26f5abee-1684-4d44-ba3d-99d9d18591d0",
+  "type": "capture",
+  "payload": {
+    "notes": [
+      {
+        "type": "decision",
+        "text": "Mobile swipe: left/right only for prev/next. Swipe-down does NOT close. Closing stays tap-overlay or ✕ button only."
+      },
+      {
+        "type": "decision",
+        "text": "Desktop arrows: minimal bare chevrons (‹ ›) in semi-transparent white at left/right edges, matching the existing minimal ✕ close button. No background circle."
+      },
+      {
+        "type": "decision",
+        "text": "Shared component lives at app/components/GalleryGrid.tsx alongside existing app/components/Footer.tsx. Both pages import ../components/GalleryGrid; the two per-page GalleryGrid.tsx copies are deleted."
+      }
+    ],
+    "context": "Plan: resolved 3 open questions before finalizing gallery nav plan"
+  },
+  "ts": 1779939163129,
+  "source": "claude-code"
+}

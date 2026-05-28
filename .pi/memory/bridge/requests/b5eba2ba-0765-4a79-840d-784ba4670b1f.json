@@ -1,0 +1,19 @@
+{
+  "id": "b5eba2ba-0765-4a79-840d-784ba4670b1f",
+  "type": "capture",
+  "payload": {
+    "notes": [
+      {
+        "type": "decision",
+        "text": "No wrap-around: at the first photo the prev arrow is hidden/disabled, at the last photo the next arrow is hidden/disabled. Navigation never crosses into another section."
+      },
+      {
+        "type": "decision",
+        "text": "Desktop: keyboard Left/Right arrow keys navigate prev/next while the lightbox is open. Also wire Esc to close the lightbox (not currently implemented). Requires a keydown listener active only while modal is open."
+      }
+    ],
+    "context": "Discuss: gallery nav end-behavior and keyboard"
+  },
+  "ts": 1779938989747,
+  "source": "claude-code"
+}
