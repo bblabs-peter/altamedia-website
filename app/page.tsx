@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import ServicesSection from "./components/ServicesSection";
 import GalleryPreview from "./components/GalleryPreview";
 import PropertyPreview from "./components/PropertyPreview";
@@ -11,14 +13,23 @@ export default function Home() {
       className="relative w-screen h-screen bg-black text-white overflow-hidden"
       style={{ fontFamily: "var(--font-bricolage)" }}
     >
-      {/* Video background */}
+      {/* Responsive hero background */}
+      <Image
+        src="/vids/hero-poster.webp"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover md:hidden"
+        style={{ zIndex: 0 }}
+      />
       <video
+        className="hidden md:block"
         autoPlay
         muted
         loop
         playsInline
-        preload="auto"
-        poster="/pics/bsa/1778580247139-plk6v6g9h4.png"
+        preload="none"
+        poster="/vids/hero-poster.webp"
         style={{
           position: "absolute",
           inset: 0,
@@ -28,7 +39,8 @@ export default function Home() {
           zIndex: 0,
         }}
       >
-        <source src="/vids/hero.webm" type="video/webm" />
+        <source src="/vids/hero.webm" type="video/webm" media="(min-width: 768px)" />
+        <source src="/vids/hero.mp4" type="video/mp4" media="(min-width: 768px)" />
       </video>
 
       {/* Dark overlay */}
