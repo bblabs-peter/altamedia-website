@@ -108,3 +108,33 @@ created_at: 2026-05-28T03:47:19.384Z
 
 The shared GalleryGrid API takes both columns and flat photos so the lightbox can navigate by curated index without relying on object identity or src matching.
 
+## dec_12 — Food and property portfolios use a uniform 3:4 responsive grid
+
+<!-- meta:
+scope: altamedia-website
+source_session: claude-code-870f2630-5295-4e58-931f-b922683e23c6
+created_at: 2026-05-28T04:51:07.529Z
+-->
+
+/foodphotography and /propertyphotography were refactored from masonry/per-section layouts to one aligned grid. Every thumbnail is a center-cropped 3:4 portrait tile, with about 2 columns on mobile, 3 on tablet, and 4 on desktop.
+
+## dec_13 — GalleryGrid API is flat photos-only and owns grid rendering
+
+<!-- meta:
+scope: altamedia-website
+source_session: claude-code-870f2630-5295-4e58-931f-b922683e23c6
+created_at: 2026-05-28T04:51:07.529Z
+-->
+
+GalleryGrid now accepts { photos: Photo[] } only, renders the responsive grid itself, and uses the flat photo array for lightbox indexing. The old columns prop, forcedRatio, buildColumns helpers, and galleryColumns module were removed.
+
+## dec_14 — Next dev watcher ignores in-root tool directories via webpack watchOptions
+
+<!-- meta:
+scope: altamedia-website
+source_session: claude-code-870f2630-5295-4e58-931f-b922683e23c6
+created_at: 2026-05-28T04:51:07.529Z
+-->
+
+next.config.ts sets webpack watchOptions.ignored for **/node_modules/**, **/.git/**, **/.pi/**, and **/.cocoindex_code/** because plain next dev does not honor .gitignore. If the dev script switches to Turbopack, use a Turbopack-equivalent ignore instead.
+

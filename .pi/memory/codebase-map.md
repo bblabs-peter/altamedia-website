@@ -1,8 +1,8 @@
 # Codebase Map — altamedia-website
 
-Last regenerated: 2026-05-28T03:47:56.807Z
+Last regenerated: 2026-05-28T05:28:33.545Z
 Languages: javascript, typescript
-Files indexed: 15 included / 241 visited (max 5000)
+Files indexed: 14 included / 295 visited (max 5000)
 
 ## Top-level structure
 
@@ -18,7 +18,6 @@ Files indexed: 15 included / 241 visited (max 5000)
     - contact/
       - page.tsx [typescript]
     - foodphotography/
-      - galleryColumns.ts [typescript]
       - page.tsx [typescript]
     - propertyphotography/
       - page.tsx [typescript]
@@ -40,7 +39,7 @@ Owns:
 - postcss.config.mjs
 
 Public surface:
-- default (variable, next.config.ts:7-7): export default nextConfig;
+- default (variable, next.config.ts:14-14): export default nextConfig;
 - default (variable, postcss.config.mjs:7-7): export default config;
 
 ### app
@@ -67,23 +66,11 @@ Owns:
 Public surface:
 - default (function, app/components/CTASection.tsx:4-64): function CTASection(): React.JSX.Element
 - default (function, app/components/Footer.tsx:3-62): function Footer(): React.JSX.Element
-- Photo (interface, app/components/GalleryGrid.tsx:5-5): interface Photo { src: string; alt: string; forcedRatio?: string }
-- default (function, app/components/GalleryGrid.tsx:28-272): function GalleryGrid({ columns, photos }: Props)
+- Photo (interface, app/components/GalleryGrid.tsx:5-5): interface Photo { src: string; alt: string }
+- default (function, app/components/GalleryGrid.tsx:17-253): function GalleryGrid({ photos }: Props)
 - default (function, app/components/GalleryPreview.tsx:7-57): function GalleryPreview()
 - default (function, app/components/PropertyPreview.tsx:7-59): function PropertyPreview()
 - default (function, app/components/ServicesSection.tsx:69-183): function ServicesSection(): React.JSX.Element
-
-### app/foodphotography
-
-Owns:
-- app/foodphotography/galleryColumns.ts
-- app/foodphotography/page.tsx
-
-Public surface:
-- Photo (interface, app/foodphotography/galleryColumns.ts:1-1): interface Photo { src: string; alt: string; forcedRatio?: string }
-- GalleryLayout (interface, app/foodphotography/galleryColumns.ts:3-7): interface GalleryLayout { columnCount?: number; columnLayout?: number[][]; photoOverrides?: Record<number, Partial<Pick<Photo, "forcedRatio">>>; }
-- buildColumns (function, app/foodphotography/galleryColumns.ts:27-54): function buildColumns(photos: Photo[], layout: GalleryLayout = {}): Photo[][]
-- default (function, app/foodphotography/page.tsx:67-152): function FoodPhotographyPage()
 
 ### app/contact
 
@@ -94,13 +81,21 @@ Public surface:
 - metadata (const, app/contact/page.tsx:6-9): const metadata: Metadata = { title: "Contact — AltaMedia", description: "Get in touch with AltaMedia.", }
 - default (function, app/contact/page.tsx:40-150): function ContactPage()
 
+### app/foodphotography
+
+Owns:
+- app/foodphotography/page.tsx
+
+Public surface:
+- default (function, app/foodphotography/page.tsx:60-145): function FoodPhotographyPage()
+
 ### app/propertyphotography
 
 Owns:
 - app/propertyphotography/page.tsx
 
 Public surface:
-- default (function, app/propertyphotography/page.tsx:109-194): function PropertyPhotographyPage()
+- default (function, app/propertyphotography/page.tsx:71-156): function PropertyPhotographyPage()
 
 ## Entry points
 

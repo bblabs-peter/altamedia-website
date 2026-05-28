@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
   "projectRoot": "/Users/petergabrielrlopez/Documents/Altamedia Dev/altamedia-website",
-  "bridgeSessionId": "870f2630-5295-4e58-931f-b922683e23c6",
-  "pid": 99638,
-  "writtenAt": "2026-05-28T05:03:03.811Z",
-  "expiresAt": "2026-05-28T05:03:07.811Z",
+  "bridgeSessionId": "fca96e9f-7613-4a0f-a866-0d8b9c10893d",
+  "pid": 12966,
+  "writtenAt": "2026-05-28T07:10:15.859Z",
+  "expiresAt": "2026-05-28T07:10:19.859Z",
   "policy": {
     "mutationTools": [
       "write",
