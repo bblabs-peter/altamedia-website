@@ -1,4 +1,4 @@
-import GalleryGrid from "./GalleryGrid";
+import GalleryGrid from "../components/GalleryGrid";
 import { buildColumns, type GalleryLayout, type Photo } from "./galleryColumns";
 import Footer from "../components/Footer";
 
@@ -141,7 +141,7 @@ export default function FoodPhotographyPage() {
             {/* Thin rule */}
             <div style={{ height: 1, background: "rgba(255,255,255,0.1)", marginBottom: "clamp(20px,3vh,32px)" }} />
 
-            <GalleryGrid columns={buildColumns(restaurant.photos, restaurant.layout)} />
+            <GalleryGrid columns={buildColumns(restaurant.photos, restaurant.layout)} photos={restaurant.photos} />
           </div>
         ))}
       </div>
