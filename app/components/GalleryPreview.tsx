@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const photos = [
   { src: "/pics/bsa/1778579297095-tykjw5gl7kp.png", alt: "Food photography preview 1" },
   { src: "/pics/bsa/1778580247139-plk6v6g9h4.png",  alt: "Food photography preview 2" },
@@ -20,11 +22,13 @@ export default function GalleryPreview() {
         {/* 3-photo grid — 1 column on mobile, 3 on md+ */}
         <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: "clamp(6px,0.8vw,12px)", marginBottom: "clamp(24px,4vh,40px)" }}>
           {photos.map((photo) => (
-            <div key={photo.src} style={{ aspectRatio: "4/3", overflow: "hidden" }}>
-              <img
+            <div key={photo.src} style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden" }}>
+              <Image
                 src={photo.src}
                 alt={photo.alt}
-                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                fill
+                sizes="(min-width:768px) 33vw,100vw"
+                style={{ objectFit: "cover" }}
               />
             </div>
           ))}

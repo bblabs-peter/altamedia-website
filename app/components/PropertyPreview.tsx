@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const photos = [
   { src: "/pics/pitstop/Pitstop - Executive 304 29.webp", alt: "Pitstop Executive 304" },
   { src: "/pics/pitstop/Pitstop - Executive 201 37.webp", alt: "Pitstop Executive 201" },
@@ -20,12 +22,14 @@ export default function PropertyPreview() {
         {/* 3-photo grid — 1 column on mobile, 3 on md+ */}
         <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: "clamp(6px,0.8vw,12px)", marginBottom: "clamp(24px,4vh,40px)" }}>
           {photos.map((photo, i) => (
-            <div key={i} style={{ aspectRatio: "4/3", overflow: "hidden", background: "rgba(255,255,255,0.06)" }}>
+            <div key={i} style={{ position: "relative", aspectRatio: "4/3", overflow: "hidden", background: "rgba(255,255,255,0.06)" }}>
               {photo.src && (
-                <img
+                <Image
                   src={photo.src}
                   alt={photo.alt}
-                  style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                  fill
+                  sizes="(min-width:768px) 33vw,100vw"
+                  style={{ objectFit: "cover" }}
                 />
               )}
             </div>
