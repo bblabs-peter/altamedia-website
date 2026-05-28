@@ -2,10 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export interface Photo { src: string; alt: string; forcedRatio?: string }
+export interface Photo { src: string; alt: string }
 
 interface Props {
-  columns: Photo[][];
   photos: Photo[];
 }
 
@@ -15,17 +14,7 @@ function clampIndex(index: number, photos: Photo[]): number {
   return Math.min(Math.max(index, 0), Math.max(photos.length - 1, 0));
 }
 
-function findPhotoIndex(photo: Photo, photos: Photo[]): number {
-  const referenceIndex = photos.findIndex((candidate) => candidate === photo);
-
-  if (referenceIndex !== -1) {
-    return referenceIndex;
-  }
-
-  return photos.findIndex((candidate) => candidate.src === photo.src);
-}
-
-export default function GalleryGrid({ columns, photos }: Props) {
+export default function GalleryGrid({ photos }: Props) {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const touchStartRef = useRef<{ x: number; y: number } | null>(null);
   const gap = "clamp(6px,0.8vw,12px)";
@@ -33,12 +22,8 @@ export default function GalleryGrid({ columns, photos }: Props) {
 
   const close = () => setActiveIndex(null);
 
-  const openPhoto = (photo: Photo) => {
-    const photoIndex = findPhotoIndex(photo, photos);
-
-    if (photoIndex !== -1) {
-      setActiveIndex(clampIndex(photoIndex, photos));
-    }
+  const openPhoto = (photoIndex: number) => {
+    setActiveIndex(clampIndex(photoIndex, photos));
   };
 
   const showPrevious = () => {
@@ -124,38 +109,34 @@ export default function GalleryGrid({ columns, photos }: Props) {
 
   return (
     <>
-      <div style={{ display: "flex", gap, alignItems: "flex-start" }}>
-        {columns.map((col, ci) => (
-          <div key={ci} style={{ flex: 1, display: "flex", flexDirection: "column", gap }}>
-            {col.filter(Boolean).map((photo, pi) =>
-              photo.src ? (
-                <div
-                  key={pi}
-                  onClick={() => openPhoto(photo)}
-                  style={{
-                    overflow: "hidden",
-                    cursor: "pointer",
-                    ...(photo.forcedRatio ? { aspectRatio: photo.forcedRatio } : {}),
-                  }}
-                >
-                  <img
-                    src={photo.src}
-                    alt={photo.alt}
-                    loading="lazy"
-                    decoding="async"
-                    style={{
-                      width: "100%",
-                      display: "block",
-                      height: photo.forcedRatio ? "100%" : undefined,
-                      objectFit: photo.forcedRatio ? "cover" : undefined,
-                      transition: "opacity 0.2s",
-                    }}
-                  />
-                </div>
-              ) : null
-            )}
-          </div>
-        ))}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4" style={{ gap }}>
+        {photos.map((photo, index) =>
+          photo.src ? (
+            <div
+              key={`${photo.src}-${index}`}
+              onClick={() => openPhoto(index)}
+              style={{
+                aspectRatio: "3 / 4",
+                overflow: "hidden",
+                cursor: "pointer",
+              }}
+            >
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                loading="lazy"
+                decoding="async"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  display: "block",
+                  objectFit: "cover",
+                  transition: "opacity 0.2s",
+                }}
+              />
+            </div>
+          ) : null
+        )}
       </div>
 
       {/* Modal */}

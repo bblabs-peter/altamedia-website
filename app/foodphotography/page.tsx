@@ -1,16 +1,11 @@
-import GalleryGrid from "../components/GalleryGrid";
-import { buildColumns, type GalleryLayout, type Photo } from "./galleryColumns";
+import GalleryGrid, { type Photo } from "../components/GalleryGrid";
 import Footer from "../components/Footer";
 
-interface Restaurant { name: string; photos: Photo[]; layout?: GalleryLayout }
+interface Restaurant { name: string; photos: Photo[] }
 
 const restaurants: Restaurant[] = [
   {
     name: "Balay Sang Amo",
-    layout: {
-      columnLayout: [[0, 4], [1, 5], [2, 6], [7, 3]],
-      photoOverrides: { 3: { forcedRatio: "2752/1536" } },
-    },
     photos: [
       { src: "/pics/bsa/1778579297095-tykjw5gl7kp.png", alt: "Balay Sang Amo — photo 1" },
       { src: "/pics/bsa/1778578969424-va2kcb09chq.png", alt: "Balay Sang Amo — photo 2" },
@@ -24,7 +19,6 @@ const restaurants: Restaurant[] = [
   },
   {
     name: "Space Bar",
-    layout: { columnCount: 3 },
     photos: [
       { src: "/pics/space/bbfd4730-90d7-411a-bfa4-0ddd532a0479.png", alt: "Space Bar — photo 1" },
       { src: "/pics/space/1778651417812-03le3kth04z9.png", alt: "Space Bar — photo 2" },
@@ -39,7 +33,6 @@ const restaurants: Restaurant[] = [
   },
   {
     name: "Masu Cafe",
-    layout: { columnCount: 4 },
     photos: [
       { src: "/pics/masu/689540491_5000782666870901_104579862378613463_n.webp", alt: "Masu Cafe — photo 1" },
       { src: "/pics/masu/ChatGPT Image May 16, 2026, 06_48_28 PM.webp", alt: "Masu Cafe — photo 2" },
@@ -141,7 +134,7 @@ export default function FoodPhotographyPage() {
             {/* Thin rule */}
             <div style={{ height: 1, background: "rgba(255,255,255,0.1)", marginBottom: "clamp(20px,3vh,32px)" }} />
 
-            <GalleryGrid columns={buildColumns(restaurant.photos, restaurant.layout)} photos={restaurant.photos} />
+            <GalleryGrid photos={restaurant.photos} />
           </div>
         ))}
       </div>

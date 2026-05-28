@@ -1,7 +1,5 @@
-import GalleryGrid from "../components/GalleryGrid";
+import GalleryGrid, { type Photo } from "../components/GalleryGrid";
 import Footer from "../components/Footer";
-
-interface Photo { src: string; alt: string; forcedRatio?: string }
 interface Property { name: string; photos: Photo[] }
 
 const properties: Property[] = [
@@ -69,42 +67,6 @@ const properties: Property[] = [
   },
 ];
 
-function buildColumns(photos: Photo[]): Photo[][] {
-  if (photos.length === 16) {
-    return [
-      [photos[0], photos[3], photos[6], photos[9], photos[12], photos[15]],
-      [photos[1], photos[4], photos[7], photos[10], photos[13]],
-      [photos[2], photos[5], photos[8], photos[11], photos[14]],
-    ];
-  }
-  if (photos.length === 14) {
-    return [
-      [photos[0], photos[3], photos[6], photos[9], photos[12]],
-      [photos[1], photos[4], photos[7], photos[10], photos[13]],
-      [photos[2], photos[5], photos[8], photos[11]],
-    ];
-  }
-  if (photos.length === 9) {
-    return [
-      [photos[0], photos[3], photos[6]],
-      [photos[1], photos[4], photos[7]],
-      [photos[2], photos[5], photos[8]],
-    ];
-  }
-  if (photos.length === 6) {
-    return [
-      [photos[0], photos[3]],
-      [photos[1], photos[4]],
-      [photos[2], photos[5]],
-    ];
-  }
-  return [
-    [photos[0], photos[4]],
-    [photos[1], photos[5]],
-    [photos[2], photos[6]],
-    [photos[7], { ...photos[3], forcedRatio: "2752/1536" }],
-  ];
-}
 
 export default function PropertyPhotographyPage() {
   return (
@@ -183,7 +145,7 @@ export default function PropertyPhotographyPage() {
             {/* Thin rule */}
             <div style={{ height: 1, background: "rgba(255,255,255,0.1)", marginBottom: "clamp(20px,3vh,32px)" }} />
 
-            <GalleryGrid columns={buildColumns(property.photos)} photos={property.photos} />
+            <GalleryGrid photos={property.photos} />
           </div>
         ))}
       </div>
