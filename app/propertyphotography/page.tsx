@@ -1,4 +1,4 @@
-import GalleryGrid from "./GalleryGrid";
+import GalleryGrid from "../components/GalleryGrid";
 import Footer from "../components/Footer";
 
 interface Photo { src: string; alt: string; forcedRatio?: string }
@@ -183,7 +183,7 @@ export default function PropertyPhotographyPage() {
             {/* Thin rule */}
             <div style={{ height: 1, background: "rgba(255,255,255,0.1)", marginBottom: "clamp(20px,3vh,32px)" }} />
 
-            <GalleryGrid columns={buildColumns(property.photos)} />
+            <GalleryGrid columns={buildColumns(property.photos)} photos={property.photos} />
           </div>
         ))}
       </div>
