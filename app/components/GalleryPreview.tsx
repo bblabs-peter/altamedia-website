@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 const photos = [
-  { src: "/pics/bsa/1778579297095-tykjw5gl7kp.png", alt: "Food photography preview 1" },
-  { src: "/pics/bsa/1778580247139-plk6v6g9h4.png",  alt: "Food photography preview 2" },
-  { src: "/pics/bsa/1778578979189-lsz8kg7ast.png",  alt: "Food photography preview 3" },
+  { src: "/pics/bsa/1778579297095-tykjw5gl7kp.webp", alt: "Food photography preview 1" },
+  { src: "/pics/bsa/1778580247139-plk6v6g9h4.webp",  alt: "Food photography preview 2" },
+  { src: "/pics/bsa/1778578979189-lsz8kg7ast.webp",  alt: "Food photography preview 3" },
 ];
 
 export default function GalleryPreview() {
